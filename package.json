@@ -1,0 +1,19 @@
+{
+  "name": "p3_leclercq_julien",
+  "version": "1.0.0",
+  "description": "Hello world",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./sass/main.scss:.style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenboy59/P3_leclercq_julien.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greenboy59/P3_leclercq_julien/issues"
+  },
+  "homepage": "https://github.com/greenboy59/P3_leclercq_julien#readme"
+}
