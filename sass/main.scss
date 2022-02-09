@@ -1,17 +1,5 @@
-.container {
-    display: flex;
-    margin: 0 auto;
-}
+@import "./Utils/variables";
 
-.btn {
-    background-color: aquamarine;
-    color: white;
-
-    &--outline {
-        background-color: unset;
-        border: 2px aquamarine solid;
-    }
-
-
-
-}
+h1 {
+    color: $colour-primary;
+} 
