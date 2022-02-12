@@ -1,5 +1,57 @@
-h1 {
-  color: #15DEA5;
+/*# sourceMappingURL=style.css.map */
+
+/* reset css */
+
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+/* Définitions des éléments principaux */
+
+@font-face {
+    font-family: 'shrikhand';
+    src: url(fonts/Shrikhand/Shrikhand-Regular.ttf) format('truetype');
 }
 
-/*# sourceMappingURL=style.css.map */
+@font-face {
+    font-family: 'roboto-regular';
+    src: url(fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto-thin';
+    src: url(fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto-light';
+    src: url(fonts/Roboto/Roboto-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto-bold';
+    src: url(fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+h1, h2 {
+    font-family: 'roboto-bold';
+}
+
+p {
+    font-family: 'roboto-thin';
+}
+
+span {
+    font-family: 'roboto-regular';
+    font-size: 0.9em;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+/* Header */
+
+.localisation-icon {
+    background: url('images/icones/location-dot.svg');
+    height: 25px;
+    width: 25px;
+}

@@ -4,7 +4,8 @@
   "description": "Hello world",
   "main": "index.js",
   "scripts": {
-    "sass":"sass --watch ./sass/main.scss:./css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,11 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/greenboy59/P3_leclercq_julien/issues"
+    "url": "https://github.com/greenboy59/P3_leclercq_julien/issues",
+    "browserslist": "last 4 versions"
   },
-  "homepage": "https://github.com/greenboy59/P3_leclercq_julien#readme"
+  "homepage": "https://github.com/greenboy59/P3_leclercq_julien#readme",
+  "dependencies": {
+    "minireset.css": "^0.0.7"
+  }
 }
