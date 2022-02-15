@@ -1,20 +1,5 @@
-$colour-primary: #9356DC;
-$colour-secondary: #FF79DA;
-$colour-tertiary: #99E2D0;
-$colour-quaternary: #282828;
-
-@mixin box-shadow {
-    box-shadow: 1px 1px 15px 1px gainsboro;
-}
-
-@mixin cards-rounded-shadow {
-    box-shadow: 1px 1px 15px 1px gainsboro;
-    border-radius: 18px;
-    position: relative;
-}
-
-@mixin flex-center-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$quaternary-color: #282828;
+$main-gradient: linear-gradient(360deg, $primary-color, $secondary-color);

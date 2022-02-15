@@ -6,11 +6,14 @@
 
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: whitesmoke;
 }
 
 img, picture, video, canvas, svg {
@@ -25,15 +28,49 @@ input, button, textarea, select {
 
 a {
   text-decoration: none;
-  cursor: pointer;
+  font-weight: 700;
+  color: inherit;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
+h1, h2 {
+  font-family: "roboto-bold";
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 1.8em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-family: "roboto-bold";
+}
+
 h4 {
   font-family: "shrikhand";
+  font-size: 1.2em;
+}
+
+p {
+  font-family: "roboto-light";
+}
+
+span, a {
+  font-family: "roboto-regular";
+  font-size: 1em;
+}
+
+button {
+  font-family: "roboto-bold";
+  border: none;
 }
 
 #wrapper {
@@ -41,7 +78,6 @@ h4 {
   max-width: 1024px;
 }
 
-/* Définitions des éléments principaux */
 @font-face {
   font-family: "shrikhand";
   src: url(fonts/Shrikhand/Shrikhand-Regular.ttf) format("truetype");
@@ -62,37 +98,6 @@ h4 {
   font-family: "roboto-bold";
   src: url(fonts/Roboto/Roboto-Bold.ttf) format("truetype");
 }
-h1, h2 {
-  font-family: "roboto-bold";
-  padding: 20px 0;
-}
-
-h1 {
-  font-size: 1.4em;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-
-h3 {
-  font-family: "roboto-bold";
-}
-
-p {
-  font-family: "roboto-thin";
-}
-
-span, a {
-  font-family: "roboto-regular";
-  font-size: 1em;
-}
-
-button {
-  font-family: "roboto-bold";
-  border: none;
-}
-
 @media only screen and (max-width: 640px) {
   /* Header */
   header, #logo {
@@ -102,24 +107,39 @@ button {
   }
 
   #logo {
+    padding: 20px 0;
+    background-color: white;
+  }
+
+  #logo img {
     width: 180px;
-    padding: 15px 0;
+    margin: 0 auto;
   }
 
   #localisation {
-    padding: 12px 0;
+    -moz-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+    box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+    padding: 15px 0;
     background-color: #EAEAEA;
     color: #353535;
-    box-shadow: 0 2px 10px -7px #000000 inset;
+    font-weight: 600;
+  }
+
+  #localisation i {
+    padding-right: 20px;
+    font-size: 1.2em;
   }
 
   .call-to-action__button {
-    padding: 15px;
+    -webkit-box-shadow: 0px 7px 10px -5px #8e8e8e;
+    -moz-box-shadow: 0px 7px 10px -5px #8e8e8e;
+    box-shadow: 0px 7px 10px -5px #8e8e8e;
+    padding: 15px 20px;
     margin: 25px 0;
     width: fit-content;
     border-radius: 25px;
     color: white;
-    box-shadow: 1px 1px 15px 1px gainsboro;
     background: linear-gradient(360deg, #9356DC, #FF79DA);
   }
 
@@ -131,27 +151,35 @@ button {
     padding: 15px 20px;
   }
 
+  #howto {
+    background-color: white;
+    padding: 20px;
+  }
+
   .howto__nav i {
     color: #7E7E7E;
     font-size: 20px;
+    width: 25px;
+    position: absolute;
+    left: 45px;
+    align-self: center;
   }
 
   .howto__nav {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 50px;
+    gap: 25px;
+    margin-bottom: 40px;
   }
 
   .howto__nav button {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 65px;
-    padding: 10px;
     box-shadow: 1px 1px 15px 1px gainsboro;
     border-radius: 18px;
     position: relative;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 100px;
     background-color: whitesmoke;
   }
 
@@ -161,7 +189,6 @@ button {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 19px;
     left: -10px;
     width: 27px;
     height: 27px;
@@ -176,14 +203,14 @@ button {
     font-weight: bold;
   }
 
-  main {
+  #restaurants {
     padding: 20px;
   }
 
   .restaurants__card {
-    position: relative;
     box-shadow: 1px 1px 15px 1px gainsboro;
     border-radius: 18px;
+    position: relative;
     position: relative;
     margin-bottom: 20px;
   }
@@ -214,7 +241,14 @@ button {
     position: absolute;
     top: 210px;
     right: 25px;
-    font-size: 27px;
+    font-size: 30px;
+    transition: all 0.5s;
+  }
+
+  .fa-heart i {
+    fill: none;
+    stroke-width: 1px;
+    stroke: "black";
   }
 
   footer {
@@ -223,19 +257,20 @@ button {
     flex-direction: column;
     background-color: #353535;
     color: white;
+    margin-top: 20px;
   }
 
   footer h4 {
     padding-bottom: 10px;
   }
 
-  .fa-utensils {
-    font-size: 11px;
-    width: 20px;
+  .legal-notice, .contact {
+    font-weight: 300;
   }
 
-  .fa-handshake-angle {
-    font-size: 9px;
+  .fa-utensils, .fa-handshake-angle {
+    font-size: 12px;
+    width: 20px;
   }
 
   span > i {

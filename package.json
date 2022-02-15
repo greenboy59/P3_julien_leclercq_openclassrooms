@@ -4,8 +4,7 @@
   "description": "Hello world",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css",
-    "prefix": "postcss ./css/style.css --use autoprefixer -d ./public/css/prefixed/"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
   },
   "repository": {
     "type": "git",
@@ -18,7 +17,8 @@
     "browserslist": "last 4 versions"
   },
   "homepage": "https://github.com/greenboy59/P3_leclercq_julien#readme",
-  "dependencies": {
-    "minireset.css": "^0.0.7"
+  "devDependencies": {
+    "sass": "^1.49.7",
+    "font-awesome": "6.0.0"
   }
 }
