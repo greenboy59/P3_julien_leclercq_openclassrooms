@@ -4,7 +4,7 @@
 
 header, #logo {
     margin: 0 auto;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -31,23 +31,15 @@ header, #logo {
     font-size: 1.2em;
 }
 
-.call-to-action__button {
-    @include box-shadow;
-    padding: 15px 20px;
-    margin: 25px 0;
-    width: fit-content;
-    border-radius: 25px;
-    color: white;
-    background: $main-gradient;
-}
-
 #call-to-action {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
 }
+
+/* Section, fonctionnement */
 
 #howto {
     background-color: white;
@@ -59,8 +51,13 @@ header, #logo {
     font-size: 20px;
     width: 25px;
     position: absolute;
-    left: 45px;
-    align-self: center;
+    left: 32px;
+    }
+}
+
+.fas {
+    display: inline-block;
+    text-align: center;
 }
 
 .howto__nav {
@@ -68,15 +65,6 @@ header, #logo {
     flex-direction: column;
     gap: 25px;
     margin-bottom: 40px;
-}
-
-.howto__nav button {
-    @include cards-rounded-shadow;
-    display: flex;
-    align-items: center;
-    height: 70px;
-    padding-left: 100px;
-    background-color: whitesmoke;
 }
 
 /* Création de la petite pastille avec les nombres */
@@ -106,6 +94,11 @@ button > a {
     @include cards-rounded-shadow;
     position: relative;
     margin-bottom: 20px;
+    transition: 400ms;
+    cursor: pointer;
+    &:hover {
+        @include cards-rounded-shadow-hover;
+    }
 }
 
 .restaurants__card img {
@@ -130,29 +123,6 @@ button > a {
     border-radius: 3px;
 }
 
-.fa-heart {
-    position: absolute;
-    top: 210px;
-    right: 25px;
-    font-size:30px;
-    transition: all .5s;
- }
-
- .fa-heart i {
-    fill: none;
-    stroke-width: 1px;
-    stroke: "black";
- }
-
-//  .fa-heart::before {
-//      content: '';
-//      background: $main-gradient;
-//  }
-
-//  .fa-heart:hover::before {
-
-//  }
-
 footer {
     padding: 20px 20px;
     display: flex;
@@ -172,10 +142,6 @@ footer h4 {
 
 .fa-utensils, .fa-handshake-angle {
     font-size: 12px;
-    width: 20px;
+    width: 30px;
 }
 
-span > i {
-    padding-right: 10px;
-}
-}

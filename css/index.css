@@ -1,0 +1,296 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: whitesmoke;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2 {
+  font-family: "roboto-bold";
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 1.7em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-family: "roboto-bold";
+  font-weight: 400;
+}
+
+h4 {
+  font-family: "shrikhand";
+  font-size: 1.2em;
+}
+
+p {
+  font-family: "roboto-light";
+}
+
+span, a {
+  font-family: "roboto-regular";
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button, input {
+  font-family: "roboto-bold";
+  border: none;
+  background-color: transparent;
+}
+
+#wrapper {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+@font-face {
+  font-family: "shrikhand";
+  src: url(fonts/Shrikhand/Shrikhand-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-regular";
+  src: url(fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-thin";
+  src: url(fonts/Roboto/Roboto-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-light";
+  src: url(fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url(fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+@media only screen and (max-width: 640px) {
+  /* Header */
+  header, #logo {
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  #logo {
+    padding: 20px 0;
+    background-color: white;
+  }
+
+  #logo img {
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  #localisation {
+    -moz-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+    box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+    padding: 15px 0;
+    background-color: #EAEAEA;
+    color: #353535;
+    font-weight: 600;
+  }
+
+  #localisation i {
+    padding-right: 20px;
+    font-size: 1.2em;
+  }
+
+  #call-to-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  /* Section, fonctionnement */
+  #howto {
+    background-color: white;
+    padding: 20px;
+  }
+
+  .howto__nav i {
+    color: #7E7E7E;
+    font-size: 20px;
+    width: 25px;
+    position: absolute;
+    left: 32px;
+  }
+}
+.fas {
+  display: inline-block;
+  text-align: center;
+}
+
+.howto__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* Création de la petite pastille avec les nombres */
+.number-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: -10px;
+  width: 27px;
+  height: 27px;
+  border-radius: 20px;
+  background-color: #9356dc;
+  color: white;
+  font-weight: bold;
+}
+
+button > a {
+  color: black;
+  font-weight: bold;
+}
+
+#restaurants {
+  padding: 20px;
+}
+
+.restaurants__card {
+  box-shadow: 1px 1px 15px 1px gainsboro;
+  border-radius: 18px;
+  position: relative;
+  position: relative;
+  margin-bottom: 20px;
+  transition: 400ms;
+  cursor: pointer;
+}
+.restaurants__card:hover {
+  box-shadow: 1px 1px 15px 1px #9356dc;
+}
+
+.restaurants__card img {
+  border-radius: 18px 18px 0 0;
+  height: 185px;
+}
+
+.restaurants__card__text {
+  padding: 15px 15px;
+}
+
+.new-label {
+  position: absolute;
+  width: 90px;
+  top: 15px;
+  right: 15px;
+  padding: 5px;
+  background-color: #99e2d0;
+  color: #269D80;
+  font-family: "roboto-bold";
+  text-align: center;
+  border-radius: 3px;
+}
+
+footer {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  color: white;
+  margin-top: 20px;
+}
+
+footer h4 {
+  padding-bottom: 10px;
+}
+
+.legal-notice, .contact {
+  font-weight: 300;
+}
+
+.fa-utensils, .fa-handshake-angle {
+  font-size: 12px;
+  width: 30px;
+}
+
+.call-to-action__btn {
+  -webkit-box-shadow: 0px 7px 10px -5px #8e8e8e;
+  -moz-box-shadow: 0px 7px 10px -5px #8e8e8e;
+  box-shadow: 0px 7px 10px -5px #8e8e8e;
+  padding: 13px 15px;
+  margin: 25px 0;
+  width: fit-content;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(360deg, #9356dc, #ff79da);
+  transition: box-shadow 500ms, text-shadow 100ms;
+}
+.call-to-action__btn:hover {
+  background: linear-gradient(360deg, rgba(147, 86, 220, 0.8), rgba(255, 121, 218, 0.8));
+  box-shadow: 1px 1px 12px 1px #9356dc;
+  text-shadow: 1px 1px 0px #9356dc;
+}
+
+.howto__nav__button {
+  box-shadow: 1px 1px 15px 1px gainsboro;
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding-left: 70px;
+  background-color: whitesmoke;
+  transition: all 400ms;
+}
+.howto__nav__button:hover {
+  opacity: 0.8;
+  box-shadow: 0px 1px 12px 1px #9356dc;
+  background: rgba(147, 86, 220, 0.2);
+}
+.howto__nav__button:hover i {
+  color: #9356dc;
+}
+
+.like-icon::before {
+  position: absolute;
+  top: 210px;
+  right: 25px;
+}
+
+/*# sourceMappingURL=style.css.map */

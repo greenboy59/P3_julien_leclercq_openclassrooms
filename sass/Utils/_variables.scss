@@ -1,5 +1,6 @@
-$primary-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
-$quaternary-color: #282828;
+$primary-color: rgb(147, 86, 220);
+$secondary-color: rgb(255, 121, 218);
+$tertiary-color: rgb(153, 226, 208);
+$quaternary-color: rgb(40, 40, 40);
 $main-gradient: linear-gradient(360deg, $primary-color, $secondary-color);
+$hover-gradient: linear-gradient(360deg, rgba(147, 86, 220, 0.80), rgba(255, 121, 218, 0.80));

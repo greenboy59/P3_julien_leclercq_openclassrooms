@@ -1,0 +1,44 @@
+.call-to-action__btn {
+    @include box-shadow;
+    padding: 13px 15px;
+    margin: 25px 0;
+    width: fit-content;
+    border-radius: 25px;
+    color: white;
+    background: $main-gradient;
+    transition: box-shadow 500ms, text-shadow 100ms;
+    &:hover {
+        @include btn-hover-gradient;
+    }
+}
+
+.howto__nav__button {
+    @include cards-rounded-shadow;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 70px;
+    background-color: whitesmoke;
+    transition: all 400ms;
+    &:hover {
+        @include btn-hover;
+    }
+}
+
+.like-icon::before {
+    position: absolute;
+    top: 210px;
+    right: 25px;
+    
+  }
+    // display: block;
+    // text-rendering: auto;
+    // -webkit-font-smoothing: antialiased;
+    // font: var(--fa-font-solid);
+    // content: "\f004";
+    // font-weight: 400;
+    // font-size:30px;
+    // transition: transform 500ms;
+    // &:hover {
+        
+    // }
