@@ -1,147 +1,257 @@
-@media only screen and (max-width: 640px) {
-
-/* Header */
-
-header, #logo {
-    margin: 0 auto;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-#logo {
-    padding: 20px 0;
-    background-color: white;
-}
-
-#logo img {
-    width: 180px;
-    margin: 0 auto;
-}
-
-#localisation {
-    @include top-box-shadow-inset;
-    padding: 15px 0;
-    background-color: #EAEAEA;
-    color: #353535;
-    font-weight: 600;
-}
-
-#localisation i {
-    padding-right: 20px;
-    font-size: 1.2em;
-}
-
-#call-to-action {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-/* Section, fonctionnement */
-
-#howto {
-    background-color: white;
-    padding: 20px;
-}
-
-.howto__nav i {
-    color: #7E7E7E;
-    font-size: 20px;
-    width: 25px;
-    position: absolute;
-    left: 32px;
+    /* Header */
+    
+    header, #logo {
+        margin: 0 auto;
+        padding-bottom: 10px;
+        text-align: center;
     }
-}
-
-.fas {
-    display: inline-block;
-    text-align: center;
-}
-
-.howto__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-/* Création de la petite pastille avec les nombres */
-
-.number-circle {
-    @include flex-align-items-center-justify-content-center;
-    position: absolute;
-    left: -10px;
-    width: 27px;
-    height: 27px;
-    border-radius: 20px;
-    background-color: $primary-color;
-    color: white;
-    font-weight: bold;
-}
-
-button > a {
-    color: black;
-    font-weight: bold;
-}
-
-#restaurants {
-    padding: 20px;
-}
-
-.restaurants__card {
-    @include cards-rounded-shadow;
-    position: relative;
-    margin-bottom: 20px;
-    transition: 400ms;
-    cursor: pointer;
-    &:hover {
-        @include cards-rounded-shadow-hover;
+    
+    #logo {
+        padding: 20px 0;
+        background-color: white;
+        & img {
+            width: 45vw;
+            margin: 0 auto;
+        }
     }
-}
+    
+    #localisation {
+        @include top-box-shadow-inset;
+        padding: 15px 0;
+        background-color: #EAEAEA;
+        color: #353535;
+        font-weight: 600;
+        font-size: 1em;
+        & i {
+            padding-right: 20px;
+        }
+    }
+    
+    .call-to-action {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    /* Section, fonctionnement */
+    
+    #howto {
+        background-color: white;
+        padding: 20px;
+    }
+    
+    .fas {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    .howto__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+        & i {
+            color: #7E7E7E;
+            font-size: 1.2em;
+            width: 35px;
+            position: absolute;
+            left: 35px;
+        }
+        & p {
+            font-family: 'roboto-regular';
+        }
+    }
+    
+    /* Création de la petite pastille avec les nombres */
+    
+    .number-circle {
+        @include flex-align-items-center-justify-content-center;
+        position: absolute;
+        left: -10px;
+        width: 27px;
+        height: 27px;
+        border-radius: 20px;
+        background-color: $primary-color;
+        color: white;
+        font-weight: bold;
+    }
+    
+    /* section restaurants */
 
-.restaurants__card img {
-    border-radius: 18px 18px 0 0;
-    height: 185px;
-}
+    .restaurants {
+        padding: 20px;
+    }
+    
+    .restaurants__card {
+        @include cards-rounded-shadow;
+        position: relative;
+        margin-bottom: 20px;
+        transition: all 400ms;
+        cursor: pointer;
+        &:hover {
+            @include cards-rounded-shadow-hover;
+        }
+    }
+    
+    .restaurants__card img {
+        border-radius: 18px 18px 0 0;
+        height: 185px;
+    }
+    
+    .restaurants__card__text {
+        padding: 15px 15px;
+    }
+    
+    .new-label {
+        position: absolute;
+        width: 90px;
+        top: 15px;
+        right: 15px;
+        padding: 5px;
+        background-color: $tertiary-color;
+        color: #269D80;
+        font-family: 'roboto-bold';
+        text-align: center;
+        border-radius: 3px;
+    }
+    
+    /* Footer */
 
-.restaurants__card__text {
-    padding: 15px 15px;
-}
+    footer {
+        padding: 20px 20px;
+        background-color: #353535;
+        color: white;
+        margin-top: 20px;
+    }
 
-.new-label {
-    position: absolute;
-    width: 90px;
-    top: 15px;
-    right: 15px;
-    padding: 5px;
-    background-color: $tertiary-color;
-    color: #269D80;
-    font-family: 'roboto-bold';
-    text-align: center;
-    border-radius: 3px;
-}
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+    }
 
-footer {
-    padding: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: #353535;
-    color: white;
-    margin-top: 20px;
-}
+    footer a:hover {
+        color: $primary-color;
+    }
+    
+    footer h4 {
+        padding-bottom: 10px;
+     }
+    
+    .legal-notice, .contact {
+        font-weight: 300;
+    }
+    
+    .fa-utensils, .fa-handshake-angle {
+        font-size: 12px;
+        width: 30px;
+    }
+    
+    /* Nouvelles règles pour les tablettes */
 
-footer h4 {
-    padding-bottom: 10px;
-}
+    @media only screen and (min-width: 768px) {
 
-.legal-notice, .contact {
-    font-weight: 300;
-}
+        .howto__nav i {
+            left: 200px;
+        }
 
-.fa-utensils, .fa-handshake-angle {
-    font-size: 12px;
-    width: 30px;
-}
+        .restaurants-grid {
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+        }
 
+        footer h4 {
+            margin-left: 10px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+        .legal-notice, .contact {
+            margin-left: 30px;
+            }
+    }
+
+    /* Nouvelles règles pour le desktop */
+
+    @media only screen and (min-width: 900px) {
+
+        #wrapper {
+            max-width: 100vw;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        #logo {
+            padding: 40px 0;
+            & img {
+                width: 20vw;
+            }
+        }
+
+        #localisation {
+            padding: 40px 0;
+            font-size: 1.5em;
+        }
+
+        .call-to-action {
+            padding-top: 40px;
+        }
+
+        main {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row-reverse;
+            & #howto {
+                width: calc(30% - 15px);
+                margin: 30px 30px 30px 0;
+            }
+            & .restaurants {
+                width: calc(70% - 15px);
+            }
+        }
+
+        #howto, .restaurants {
+            background-color: whitesmoke;
+            border-radius: 18px;
+            margin: 30px 30px;
+        }
+
+        .howto__nav {
+            margin-bottom: 0;
+            &__button {
+                flex-direction: column-reverse;
+                justify-content: space-around;
+                height: 165px;
+                padding: 30px 30px 10px 30px;
+                text-align: center;
+        }
+            & i {
+                margin: 15px 0;
+                position: inherit;
+                left: inherit;
+                font-size: xx-large;
+            }
+            & .number-circle {
+                top: -12px;
+                left: inherit;
+            }
+        }
+
+        h4 {
+            padding-left: 40px;
+        }
+
+        .footer-links, footer h4 {
+            width: 1080px;
+            padding-left: 30px;
+            margin: 0 auto;
+        }
+
+    }

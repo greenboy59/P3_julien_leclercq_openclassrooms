@@ -41,3 +41,9 @@
     justify-content: center;
 }
 
+@mixin like-icon-positioning {
+    position: absolute;
+    top: 80%;
+    right: 10%;
+    font-size: 25px;
+}

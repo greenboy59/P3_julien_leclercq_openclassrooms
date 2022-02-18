@@ -1,5 +1,6 @@
 .call-to-action__btn {
     @include box-shadow;
+    display: block;
     padding: 13px 15px;
     margin: 25px 0;
     width: fit-content;
@@ -17,7 +18,7 @@
     display: flex;
     align-items: center;
     height: 70px;
-    padding-left: 70px;
+    padding-left: 80px;
     background-color: whitesmoke;
     transition: all 400ms;
     &:hover {
@@ -25,20 +26,27 @@
     }
 }
 
-.like-icon::before {
-    position: absolute;
-    top: 210px;
-    right: 25px;
-    
+.like-icon-regular {
+    @include like-icon-positioning;
+    transition: all 500ms;
+    }
+
+
+.like-icon-solid {
+    @include like-icon-positioning;
+    transition: all 500ms;
+    opacity: 0;
+    &:hover {
+        color: transparent;
+        background-image: $secondary-gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        opacity: 1;
+    }
   }
-    // display: block;
-    // text-rendering: auto;
-    // -webkit-font-smoothing: antialiased;
-    // font: var(--fa-font-solid);
-    // content: "\f004";
-    // font-weight: 400;
-    // font-size:30px;
-    // transition: transform 500ms;
-    // &:hover {
-        
-    // }
+
+  @media only screen and (min-width: 768px) {
+.howto__nav__button {
+    padding-left: 300px;
+}
+  }

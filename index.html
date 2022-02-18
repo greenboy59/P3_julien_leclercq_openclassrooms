@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,9 +21,9 @@
         <img src="images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood!">
       </div>
       <div id="localisation">
-        <span class="localisation"><i class="fas fa-location-dot"></i>Paris, Belleville</span>
+        <span><i class="fas fa-location-dot"></i>Paris, Belleville</span>
       </div>
-      <div id="call-to-action">
+      <div class="call-to-action">
         <h1>Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
         <a href="#" class="call-to-action__btn">Explorer nos restaurants</a>
@@ -37,23 +37,24 @@
             <a href="#" class="howto__nav__button">
               <span class="number-circle">1</span>
               <i class="fas fa-mobile-screen-button"></i>
-              Choisissez un restaurant
+              <p>Choisissez un restaurant</p>
             </a>
           <a href="#" class="howto__nav__button">
             <span class="number-circle">2</span>
             <i class="fas fa-list-ul"></i>
-            Composez votre menu
+            <p>Composez votre menu</p>
           </a>
           <a href="#" class="howto__nav__button">
             <span class="number-circle">3</span>
             <i class="fas fa-store"></i>
-            Dégustez au restaurant
+            <p>Dégustez au restaurant</p>
           </a>
         </nav>
       </section>
 
-      <section id="restaurants">
+      <section class="restaurants">
         <h2>Restaurants</h2>
+        <div class="restaurants-grid">
         <div class="restaurants__card">
           <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="la palette du goût" />
           <div class="new-label">Nouveau</div>
@@ -61,7 +62,8 @@
             <h3>La palette du goût</h3>
             <p>Ménilmontant</p>
           </div>
-          <a><i class="like-icon"></i></a>
+          <a href="#"><i class="like-icon-regular far fa-heart"></i></a>
+          <a href="#"><i class="like-icon-solid fas fa-heart"></i></a>
         </div>
         <div class="restaurants__card">
           <img src="images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée" />
@@ -70,7 +72,8 @@
             <h3>La note enchantée</h3>
             <p>Charonne</p>
           </div>
-          <a><i class="like-icon"></i></a>
+          <a href="#"><i class="like-icon-regular far fa-heart"></i></a>
+          <a href="#"><i class="like-icon-solid fas fa-heart"></i></a>
         </div>
         <div class="restaurants__card">
           <img src="images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française" />
@@ -78,7 +81,8 @@
             <h3>À la française</h3>
             <p>Cité Rouge</p>
           </div>
-          <a><i class="like-icon"></i></a>
+          <a href="#"><i class="like-icon-regular far fa-heart"></i></a>
+          <a href="#"><i class="like-icon-solid fas fa-heart"></i></a>
         </div>
         <div class="restaurants__card">
           <img src="images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens" />
@@ -86,17 +90,21 @@
             <h3>Le délice des sens</h3>
             <p>Folie-Méricourt</p>
           </div>
-          <a><i class="like-icon"></i></a>
+          <a href="#"><i class="like-icon-regular far fa-heart"></i></a>
+          <a href="#"><i class="like-icon-solid fas fa-heart"></i></a>
         </div>
+      </div>
       </section>
     </main>
 
     <footer>
       <h4>ohmyfood</h4>
-      <span><i class="fas fa-utensils"></i><a>Proposer un restaurant</a></span>
-      <span><i class="fas fa-handshake-angle"></i><a>Devenir partenaire</a></span>
+      <div class="footer-links">
+      <span><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></span>
+      <span><a href="#"><i class="fas fa-handshake-angle"></i>Devenir partenaire</a></span>
       <a class="legal-notice">Mentions légales</a>
       <a class="contact" href="mailto:adresse@serveur.com">Contact</a>
+    </div>
     </footer>
 
   </div>
