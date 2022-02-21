@@ -1,0 +1,61 @@
+/* --- Menu - à la Française --- */
+h2 {
+    padding: 0;
+}
+.restaurant-title {
+    font-family: 'shrikhand';
+}
+
+.menu-header {
+    position: relative;
+    background-color: white;
+    padding: 0;
+    & i {
+        font-size: 1.5em;
+    }
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 15px;
+}
+
+#wrapper-menu {
+    padding: 0 20px;
+    border-radius: 18px 0;
+}
+
+.title-menu-like-icon {
+    position: relative;
+}
+
+.partial-underline {
+    width: fit-content;
+    position: relative;
+    line-height: 2;
+    display: inline-block;
+    font-family: 'roboto-thin';
+  }
+  .partial-underline:before {
+    content: '';
+    border-bottom: 4px solid $tertiary-color;
+    position: absolute;
+    width: 70%;
+    bottom: 0;
+  }
+
+.entries, .dishes, .desserts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.order-btn {
+    @include flex-align-items-center-justify-content-center;
+    & .call-to-action__btn {
+        padding: 15px 50px;
+    }
+}

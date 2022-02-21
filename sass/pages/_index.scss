@@ -102,6 +102,7 @@
     
     .restaurants__card__text {
         padding: 15px 15px;
+        width: fit-content;
     }
     
     .new-label {
@@ -177,10 +178,12 @@
 
     /* Nouvelles règles pour le desktop */
 
-    @media only screen and (min-width: 900px) {
+    @media screen and (min-width: 900px) {
 
         #wrapper {
-            max-width: 100vw;
+            max-width: unset;
+            min-width: 100vw;
+            margin: 0;
         }
 
         body {
@@ -206,11 +209,12 @@
         main {
             max-width: 1080px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             flex-direction: row-reverse;
+            justify-content: space-between;
             & #howto {
                 width: calc(30% - 15px);
-                margin: 30px 30px 30px 0;
             }
             & .restaurants {
                 width: calc(70% - 15px);
@@ -220,13 +224,12 @@
         #howto, .restaurants {
             background-color: whitesmoke;
             border-radius: 18px;
-            margin: 30px 30px;
         }
 
         .howto__nav {
             margin-bottom: 0;
             &__button {
-                flex-direction: column-reverse;
+                flex-direction: column;
                 justify-content: space-around;
                 height: 165px;
                 padding: 30px 30px 10px 30px;

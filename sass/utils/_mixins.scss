@@ -46,4 +46,13 @@
     top: 80%;
     right: 10%;
     font-size: 25px;
+    width: fit-content;
+}
+
+@mixin like-icon-positioning-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    width: fit-content;
 }

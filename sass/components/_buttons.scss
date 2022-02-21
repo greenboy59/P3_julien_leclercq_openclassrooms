@@ -7,7 +7,7 @@
     border-radius: 25px;
     color: white;
     background: $main-gradient;
-    transition: box-shadow 500ms, text-shadow 100ms;
+    transition: box-shadow .8s, text-shadow .5s;
     &:hover {
         @include btn-hover-gradient;
     }
@@ -20,7 +20,7 @@
     height: 70px;
     padding-left: 80px;
     background-color: whitesmoke;
-    transition: all 400ms;
+    transition: all .8s;
     &:hover {
         @include btn-hover;
     }
@@ -28,25 +28,94 @@
 
 .like-icon-regular {
     @include like-icon-positioning;
-    transition: all 500ms;
     }
 
 
 .like-icon-solid {
     @include like-icon-positioning;
-    transition: all 500ms;
     opacity: 0;
+    transition: all .8s;
     &:hover {
+        animation: pulse 0.6s .8s infinite;
         color: transparent;
         background-image: $secondary-gradient;
         -webkit-background-clip: text;
         background-clip: text;
         opacity: 1;
     }
+    &::before {
+        transform-origin: bottom;
+    }
   }
 
+  @keyframes pulse {
+    0% {
+       transform: scale(1);
+    }
+ 
+    30% {
+       transform: scale(1.2);
+    }
+ 
+    60% {
+       transform: scale(1);
+    }
+}
+
+ /* --- Régles sécifiques aux tablettes --- */
+
   @media only screen and (min-width: 768px) {
+
 .howto__nav__button {
     padding-left: 300px;
 }
+
   }
+  
+ /* --- Régles pour menus --- */
+
+ .like-icon-regular-menu {
+    @include like-icon-positioning-menu;
+    }
+
+
+.like-icon-solid-menu {
+    @include like-icon-positioning-menu;
+    opacity: 0;
+    transition: all .8s;
+    &:hover {
+        animation: pulse 0.6s .8s infinite;
+        color: transparent;
+        background-image: $secondary-gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        opacity: 1;
+    }
+    &::before {
+        transform-origin: bottom;
+    }
+  }
+
+  .dishes-btn {
+    @include cards-rounded-shadow;
+    position: relative;
+    padding: 10px;
+    transition: all .5s;
+    & strong {
+        position: absolute;
+        top: 40px;
+        right: 15px;
+        font-family: 'roboto-bold';
+    }
+    & .fa-circle-check {
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+            background-color: $tertiary-color;
+            position: absolute;
+            right: 15px;
+            top: 30px;
+        }
+    }
+}
+
