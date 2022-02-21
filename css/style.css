@@ -231,16 +231,6 @@ button, input {
   right: 15px;
   font-family: "roboto-bold";
 }
-.dishes-btn .fa-circle-check {
-  opacity: 0;
-}
-.dishes-btn .fa-circle-check:hover {
-  opacity: 1;
-  background-color: #99e2d0;
-  position: absolute;
-  right: 15px;
-  top: 30px;
-}
 
 /* Header */
 header, #logo {
@@ -499,10 +489,6 @@ footer h4 {
   }
 }
 /* --- Menu - à la Française --- */
-h2 {
-  padding: 0;
-}
-
 .restaurant-title {
   font-family: "shrikhand";
 }
@@ -527,6 +513,9 @@ h2 {
   padding: 0 20px;
   border-radius: 18px 0;
 }
+#wrapper-menu h2 {
+  padding: 10px 0;
+}
 
 .title-menu-like-icon {
   position: relative;
@@ -535,7 +524,6 @@ h2 {
 .partial-underline {
   width: fit-content;
   position: relative;
-  line-height: 2;
   display: inline-block;
   font-family: "roboto-thin";
 }
@@ -562,6 +550,7 @@ h2 {
 }
 .order-btn .call-to-action__btn {
   padding: 15px 50px;
+  margin: 0 0 40px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
