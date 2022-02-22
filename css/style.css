@@ -1,4 +1,28 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "shrikhand";
+  src: url(fonts/Shrikhand/Shrikhand-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-regular";
+  src: url(fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-thin";
+  src: url(fonts/Roboto/Roboto-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-light";
+  src: url(fonts/Roboto/Roboto-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-bold";
+  src: url(fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "roboto-medium";
+  src: url(fonts/Roboto/Roboto-Medium.ttf) format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +38,6 @@ html, body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: whitesmoke;
 }
 
 img, picture, video, canvas, svg {
@@ -82,30 +105,10 @@ button, input {
   max-width: 1024px;
 }
 
-@font-face {
-  font-family: "shrikhand";
-  src: url(fonts/Shrikhand/Shrikhand-Regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: "roboto-regular";
-  src: url(fonts/Roboto/Roboto-Regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: "roboto-thin";
-  src: url(fonts/Roboto/Roboto-Thin.ttf) format("truetype");
-}
-@font-face {
-  font-family: "roboto-light";
-  src: url(fonts/Roboto/Roboto-Light.ttf) format("truetype");
-}
-@font-face {
-  font-family: "roboto-bold";
-  src: url(fonts/Roboto/Roboto-Bold.ttf) format("truetype");
-}
 .call-to-action__btn {
-  -webkit-box-shadow: 0px 7px 10px -5px #8e8e8e;
-  -moz-box-shadow: 0px 7px 10px -5px #8e8e8e;
-  box-shadow: 0px 7px 10px -5px #8e8e8e;
+  -webkit-box-shadow: 0 7px 10px -5px #8e8e8e;
+  -moz-box-shadow: 0 7px 10px -5px #8e8e8e;
+  box-shadow: 0 7px 10px -5px #8e8e8e;
   display: block;
   padding: 13px 15px;
   margin: 25px 0;
@@ -118,12 +121,12 @@ button, input {
 .call-to-action__btn:hover {
   background: linear-gradient(360deg, #9f6edb, #fc92de);
   box-shadow: 1px 1px 12px 1px #9356dc;
-  text-shadow: 1px 1px 0px #9356dc;
+  text-shadow: 1px 1px 0 #9356dc;
 }
 
 .howto__nav__button {
   box-shadow: 1px 1px 15px 1px gainsboro;
-  border-radius: 18px;
+  border-radius: 15px;
   position: relative;
   display: flex;
   align-items: center;
@@ -134,7 +137,7 @@ button, input {
 }
 .howto__nav__button:hover {
   opacity: 0.8;
-  box-shadow: 0px 1px 12px 1px #9356dc;
+  box-shadow: 0 1px 12px 1px #9356dc;
   background: rgba(147, 86, 220, 0.2);
 }
 .howto__nav__button:hover i {
@@ -143,18 +146,16 @@ button, input {
 
 .like-icon-regular {
   position: absolute;
-  top: 80%;
+  top: 35%;
   right: 10%;
   font-size: 25px;
-  width: fit-content;
 }
 
 .like-icon-solid {
   position: absolute;
-  top: 80%;
+  top: 35%;
   right: 10%;
   font-size: 25px;
-  width: fit-content;
   opacity: 0;
   transition: all 0.8s;
 }
@@ -187,10 +188,10 @@ button, input {
     padding-left: 300px;
   }
 }
-/* --- Régles pour menus --- */
+/* --- Régles des boutons pour les pages menus --- */
 .like-icon-regular-menu {
   position: absolute;
-  top: 20px;
+  top: 35px;
   right: 20px;
   font-size: 25px;
   width: fit-content;
@@ -198,7 +199,7 @@ button, input {
 
 .like-icon-solid-menu {
   position: absolute;
-  top: 20px;
+  top: 35px;
   right: 20px;
   font-size: 25px;
   width: fit-content;
@@ -219,17 +220,41 @@ button, input {
 
 .dishes-btn {
   box-shadow: 1px 1px 15px 1px gainsboro;
-  border-radius: 18px;
+  border-radius: 15px;
   position: relative;
   position: relative;
+  font-size: 0.9em;
   padding: 10px;
   transition: all 0.5s;
 }
 .dishes-btn strong {
+  font-family: "roboto-medium";
+}
+.dishes-btn i {
   position: absolute;
-  top: 40px;
-  right: 15px;
-  font-family: "roboto-bold";
+  background-color: #99e2d0;
+  color: white;
+  opacity: 0;
+}
+.dishes-btn i:hover {
+  padding-right: 100px;
+  opacity: 1;
+}
+
+.dishes-details-price {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.order-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-btn .call-to-action__btn {
+  padding: 15px 50px;
+  margin: 0 0 40px 0;
 }
 
 /* Header */
@@ -249,9 +274,9 @@ header, #logo {
 }
 
 #localisation {
-  -moz-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
-  -webkit-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
-  box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
+  -webkit-box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
+  box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
   padding: 15px 0;
   background-color: #EAEAEA;
   color: #353535;
@@ -268,12 +293,13 @@ header, #logo {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  background-color: whitesmoke;
 }
 
 /* Section, fonctionnement */
-#howto {
+.howto__container {
   background-color: white;
-  padding: 20px;
+  padding: 20px 20px 20px 32px;
 }
 
 .fas {
@@ -304,7 +330,7 @@ header, #logo {
   align-items: center;
   justify-content: center;
   position: absolute;
-  left: -10px;
+  left: -12px;
   width: 27px;
   height: 27px;
   border-radius: 20px;
@@ -316,11 +342,12 @@ header, #logo {
 /* section restaurants */
 .restaurants {
   padding: 20px;
+  background-color: whitesmoke;
 }
 
 .restaurants__card {
   box-shadow: 1px 1px 15px 1px gainsboro;
-  border-radius: 18px;
+  border-radius: 15px;
   position: relative;
   position: relative;
   margin-bottom: 20px;
@@ -330,15 +357,13 @@ header, #logo {
 .restaurants__card:hover {
   box-shadow: 1px 1px 15px 1px #9356dc;
 }
-
 .restaurants__card img {
-  border-radius: 18px 18px 0 0;
-  height: 185px;
+  border-radius: 15px 15px 0 0;
+  height: 170px;
 }
-
 .restaurants__card__text {
+  position: relative;
   padding: 15px 15px;
-  width: fit-content;
 }
 
 .new-label {
@@ -359,20 +384,17 @@ footer {
   padding: 20px 20px;
   background-color: #353535;
   color: white;
-  margin-top: 20px;
+}
+footer h4 {
+  padding-bottom: 10px;
+}
+footer a:hover {
+  color: #9356dc;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
-}
-
-footer a:hover {
-  color: #9356dc;
-}
-
-footer h4 {
-  padding-bottom: 10px;
 }
 
 .legal-notice, .contact {
@@ -381,13 +403,26 @@ footer h4 {
 
 .fa-utensils, .fa-handshake-angle {
   font-size: 12px;
-  width: 30px;
+  margin-right: 15px;
+}
+
+.fa-handshake-angle {
+  margin-right: 10px;
 }
 
 /* Nouvelles règles pour les tablettes */
 @media only screen and (min-width: 768px) {
+  .howto__container {
+    padding: 20px;
+  }
+
   .howto__nav i {
     left: 200px;
+  }
+
+  .number-circle {
+    top: -15px;
+    left: 50%;
   }
 
   .restaurants-grid {
@@ -396,13 +431,9 @@ footer h4 {
     grid-template-columns: calc(50% - 10px) calc(50% - 10px);
   }
 
-  footer h4 {
-    margin-left: 10px;
-  }
-
   .footer-links {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    flex-direction: row;
+    gap: 50px;
   }
 
   .legal-notice, .contact {
@@ -442,7 +473,7 @@ footer h4 {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-between;
   }
   main #howto {
@@ -452,7 +483,7 @@ footer h4 {
     width: calc(70% - 15px);
   }
 
-  #howto, .restaurants {
+  .howto__container, .restaurants {
     background-color: whitesmoke;
     border-radius: 18px;
   }
@@ -478,19 +509,16 @@ footer h4 {
     left: inherit;
   }
 
-  h4 {
-    padding-left: 40px;
-  }
-
   .footer-links, footer h4 {
-    width: 1080px;
-    padding-left: 30px;
+    max-width: 1080px;
+    justify-content: space-between;
     margin: 0 auto;
   }
 }
 /* --- Menu - à la Française --- */
 .restaurant-title {
   font-family: "shrikhand";
+  padding-top: 35px;
 }
 
 .menu-header {
@@ -509,12 +537,18 @@ footer h4 {
   padding: 0 15px;
 }
 
+main {
+  position: relative;
+}
+
 #wrapper-menu {
+  top: -50px;
   padding: 0 20px;
-  border-radius: 18px 0;
+  border-radius: 40px 40px 0 0;
+  background-color: whitesmoke;
 }
 #wrapper-menu h2 {
-  padding: 10px 0;
+  padding: 7px 0;
 }
 
 .title-menu-like-icon {
@@ -527,8 +561,7 @@ footer h4 {
   display: inline-block;
   font-family: "roboto-thin";
 }
-
-.partial-underline:before {
+.partial-underline::before {
   content: "";
   border-bottom: 4px solid #99e2d0;
   position: absolute;
@@ -543,14 +576,9 @@ footer h4 {
   margin-bottom: 40px;
 }
 
-.order-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.order-btn .call-to-action__btn {
-  padding: 15px 50px;
-  margin: 0 0 40px 0;
+.footer-menu {
+  position: relative;
+  top: -50px;
 }
 
 /*# sourceMappingURL=style.css.map */

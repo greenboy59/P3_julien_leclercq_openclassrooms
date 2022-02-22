@@ -1,18 +1,18 @@
 @mixin box-shadow {
-    -webkit-box-shadow: 0px 7px 10px -5px #8e8e8e;
-    -moz-box-shadow: 0px 7px 10px -5px #8e8e8e;
-    box-shadow: 0px 7px 10px -5px #8e8e8e;
+    -webkit-box-shadow: 0 7px 10px -5px #8e8e8e;
+    -moz-box-shadow: 0 7px 10px -5px #8e8e8e;
+    box-shadow: 0 7px 10px -5px #8e8e8e;
 }
 
 @mixin top-box-shadow-inset {
-    -moz-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
-    -webkit-box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
-    box-shadow: inset 0px 7px 10px -11px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
+    box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
 }
 
 @mixin cards-rounded-shadow {
     box-shadow: 1px 1px 15px 1px gainsboro;
-    border-radius: 18px;
+    border-radius: 15px;
     position: relative;
 }
 
@@ -22,7 +22,7 @@
 
 @mixin btn-hover {
     opacity: 0.8;
-    box-shadow: 0px 1px 12px 1px $primary-color;
+    box-shadow: 0 1px 12px 1px $primary-color;
     background: rgba(147, 86, 220, .2);
     & i {
         color: $primary-color;
@@ -32,7 +32,7 @@
 @mixin btn-hover-gradient {
     background: $hover-gradient;
     box-shadow: 1px 1px 12px 1px $primary-color;
-    text-shadow: 1px 1px 0px $primary-color;
+    text-shadow: 1px 1px 0 $primary-color;
 }
 
 @mixin flex-align-items-center-justify-content-center {
@@ -43,15 +43,14 @@
 
 @mixin like-icon-positioning {
     position: absolute;
-    top: 80%;
+    top: 35%;
     right: 10%;
     font-size: 25px;
-    width: fit-content;
 }
 
 @mixin like-icon-positioning-menu {
     position: absolute;
-    top: 20px;
+    top: 35px;
     right: 20px;
     font-size: 25px;
     width: fit-content;

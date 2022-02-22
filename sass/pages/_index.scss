@@ -33,15 +33,16 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
+        background-color: whitesmoke;
     }
     
     /* Section, fonctionnement */
-    
-    #howto {
+
+    .howto__container {
         background-color: white;
-        padding: 20px;
+        padding: 20px 20px 20px 32px;
     }
-    
+
     .fas {
         display: inline-block;
         text-align: center;
@@ -69,7 +70,7 @@
     .number-circle {
         @include flex-align-items-center-justify-content-center;
         position: absolute;
-        left: -10px;
+        left: -12px;
         width: 27px;
         height: 27px;
         border-radius: 20px;
@@ -82,6 +83,7 @@
 
     .restaurants {
         padding: 20px;
+        background-color: whitesmoke;
     }
     
     .restaurants__card {
@@ -93,16 +95,14 @@
         &:hover {
             @include cards-rounded-shadow-hover;
         }
-    }
-    
-    .restaurants__card img {
-        border-radius: 18px 18px 0 0;
-        height: 185px;
-    }
-    
-    .restaurants__card__text {
-        padding: 15px 15px;
-        width: fit-content;
+        & img {
+            border-radius: 15px 15px 0 0;
+            height: 170px;
+        }
+        &__text {
+            position: relative;
+            padding: 15px 15px;
+        }
     }
     
     .new-label {
@@ -124,7 +124,12 @@
         padding: 20px 20px;
         background-color: #353535;
         color: white;
-        margin-top: 20px;
+        & h4 {
+            padding-bottom: 10px;
+        }
+        & a:hover {
+            color: $primary-color;
+        }
     }
 
     .footer-links {
@@ -132,29 +137,35 @@
         flex-direction: column;
     }
 
-    footer a:hover {
-        color: $primary-color;
-    }
-    
-    footer h4 {
-        padding-bottom: 10px;
-     }
-    
     .legal-notice, .contact {
         font-weight: 300;
     }
     
-    .fa-utensils, .fa-handshake-angle {
+    .fa-utensils {
         font-size: 12px;
-        width: 30px;
+        margin-right: 15px;
     }
-    
+
+    .fa-handshake-angle {
+    @extend .fa-utensils;
+    margin-right: 10px;
+}
+
     /* Nouvelles règles pour les tablettes */
 
     @media only screen and (min-width: 768px) {
 
+        .howto__container {
+            padding: 20px;
+        }
+
         .howto__nav i {
             left: 200px;
+        }
+
+        .number-circle {
+            top: -15px;
+            left: 50%;
         }
 
         .restaurants-grid {
@@ -163,13 +174,9 @@
             grid-template-columns: calc(50% - 10px) calc(50% - 10px);
         }
 
-        footer h4 {
-            margin-left: 10px;
-        }
-
         .footer-links {
-            display: grid;
-            grid-template-columns: 50% 50%;
+            flex-direction: row;
+            gap: 50px;
         }
         .legal-notice, .contact {
             margin-left: 30px;
@@ -211,7 +218,7 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            flex-direction: row-reverse;
+            flex-direction: row;
             justify-content: space-between;
             & #howto {
                 width: calc(30% - 15px);
@@ -221,7 +228,7 @@
             }
         }
 
-        #howto, .restaurants {
+        .howto__container, .restaurants {
             background-color: whitesmoke;
             border-radius: 18px;
         }
@@ -247,13 +254,9 @@
             }
         }
 
-        h4 {
-            padding-left: 40px;
-        }
-
         .footer-links, footer h4 {
-            width: 1080px;
-            padding-left: 30px;
+            max-width: 1080px;
+            justify-content: space-between;
             margin: 0 auto;
         }
 

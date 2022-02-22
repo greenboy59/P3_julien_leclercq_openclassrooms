@@ -2,6 +2,7 @@
 
 .restaurant-title {
     font-family: 'shrikhand';
+    padding-top: 35px;
 }
 
 .menu-header {
@@ -20,11 +21,17 @@
     padding: 0 15px;
 }
 
+main {
+    position: relative;
+}
+
 #wrapper-menu {
+    top: -50px;
     padding: 0 20px;
-    border-radius: 18px 0;
+    border-radius: 40px 40px 0 0;
+    background-color: whitesmoke;
     & h2 {
-        padding: 10px 0;
+        padding: 7px 0;
     }
 }
 
@@ -37,13 +44,13 @@
     position: relative;
     display: inline-block;
     font-family: 'roboto-thin';
-  }
-  .partial-underline:before {
+    &::before {
     content: '';
     border-bottom: 4px solid $tertiary-color;
     position: absolute;
     width: 70%;
     bottom: 0;
+    }
   }
 
 .entries, .dishes, .desserts {
@@ -53,10 +60,8 @@
     margin-bottom: 40px;
 }
 
-.order-btn {
-    @include flex-align-items-center-justify-content-center;
-    & .call-to-action__btn {
-        padding: 15px 50px;
-        margin: 0 0 40px 0;
-    }
+.footer-menu {
+    position: relative;
+   top: -50px;
 }
+

@@ -1,10 +1,13 @@
-@import "utils/_variables";
-@import "utils/_mixins";
-@import "base/_commons";
-@import "base/_fonts";
-@import "components/_buttons";
-@import "pages/_index";
-@import "pages/_menu-à-la-française";
-@import "pages/_menu-la-note-enchantée";
-@import "pages/_menu-la-palette-du-goût";
-@import "pages/_menu-le-délice-des-sens";
+@import "base/fonts";
+
+@import "utils/variables";
+@import "utils/mixins";
+
+@import "base/commons";
+@import "components/buttons";
+
+@import "pages/index";
+@import "pages/menu-à-la-française";
+@import "pages/menu-la-note-enchantée";
+@import "pages/menu-la-palette-du-goût";
+@import "pages/menu-le-délice-des-sens";

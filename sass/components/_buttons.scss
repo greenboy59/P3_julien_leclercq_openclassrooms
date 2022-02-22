@@ -72,7 +72,7 @@
 
   }
   
- /* --- Régles pour menus --- */
+ /* --- Régles des boutons pour les pages menus --- */
 
  .like-icon-regular-menu {
     @include like-icon-positioning-menu;
@@ -99,23 +99,35 @@
    .dishes-btn {
      @include cards-rounded-shadow;
      position: relative;
+     font-size: 0.9em;
      padding: 10px;
      transition: all .5s;
      & strong {
-         position: absolute;
-         top: 40px;
-         right: 15px;
-         font-family: 'roboto-bold';
-     }
-    //  & .fa-circle-check {
-    //      opacity: 0;
-    //      &:hover {
-    //          opacity: 1;
-    //          background-color: $tertiary-color;
-    //          position: absolute;
-    //          right: 15px;
-    //          top: 30px;
-    //      }
-    //   }
+         font-family: 'roboto-medium';
+    }
+    & i {
+        position: absolute;
+        background-color: $tertiary-color;
+        color: white;
+        opacity: 0;
+    }
+    & i:hover {
+        padding-right: 100px;
+        opacity: 1;
+    }
+}
+
+.dishes-details-price {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.order-btn {
+    @include flex-align-items-center-justify-content-center;
+    & .call-to-action__btn {
+        padding: 15px 50px;
+        margin: 0 0 40px 0;
+    }
 }
 
