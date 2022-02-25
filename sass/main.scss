@@ -1,9 +1,12 @@
-@import "base/fonts";
-
 @import "utils/variables";
 @import "utils/mixins";
+@import "utils/keyframes";
 
+@import "base/fonts";
 @import "base/commons";
+@import "base/header";
+@import "base/footer";
+
 @import "components/buttons";
 
 @import "pages/index";

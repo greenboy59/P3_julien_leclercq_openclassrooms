@@ -37,29 +37,56 @@
     transition: all .8s;
     &:hover {
         animation: pulse 0.6s .8s infinite;
+        transition: all .5s linear;
         color: transparent;
         background-image: $secondary-gradient;
         -webkit-background-clip: text;
         background-clip: text;
         opacity: 1;
     }
-    &::before {
-        transform-origin: bottom;
-    }
   }
 
-  @keyframes pulse {
-    0% {
-       transform: scale(1);
-    }
- 
-    30% {
-       transform: scale(1.2);
-    }
- 
-    60% {
-       transform: scale(1);
-    }
+.dishes-btn {
+    @include cards-rounded-shadow;
+    position: relative;
+    font-size: 0.9em;
+    padding: 10px;
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+   &::before {
+    visibility: hidden;
+    display: inline-block;
+    position: absolute;
+    font-family: 'font-awesome 4 Free';
+    content: "\f058";
+    right: -20px;
+    top: 25%;
+    font-size: 25px;
+    transform: translate(0) rotate(90deg);
+    transition: all .5s;
+    color: white;
+   }
+   &:hover {
+       padding-right: 60px;
+       transition: all .5s;
+       &::before {
+           transform: translateX(-145%) rotate(1turn);
+           visibility: visible;
+           transition: all .5s;
+           z-index: 2;
+       }
+       & .dishes-btn__check {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        border-radius: 0 15px 15px 0;
+        width: 100%;
+        border-right: 60px solid $tertiary-color;
+        transition: all .5s;
+}
+}
 }
 
  /* --- Régles sécifiques aux tablettes --- */
@@ -91,37 +118,7 @@
         background-clip: text;
         opacity: 1;
     }
-    &::before {
-        transform-origin: bottom;
-    }
   }
-
-   .dishes-btn {
-     @include cards-rounded-shadow;
-     position: relative;
-     font-size: 0.9em;
-     padding: 10px;
-     transition: all .5s;
-     & strong {
-         font-family: 'roboto-medium';
-    }
-    & i {
-        position: absolute;
-        background-color: $tertiary-color;
-        color: white;
-        opacity: 0;
-    }
-    & i:hover {
-        padding-right: 100px;
-        opacity: 1;
-    }
-}
-
-.dishes-details-price {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 10px;
-}
 
 .order-btn {
     @include flex-align-items-center-justify-content-center;

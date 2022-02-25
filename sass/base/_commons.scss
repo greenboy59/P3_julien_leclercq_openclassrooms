@@ -31,10 +31,6 @@
     color: inherit;
 }
 
-    p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-
     h1, h2 {
     font-family: 'roboto-bold';
     padding: 20px 0;
@@ -67,6 +63,7 @@
     font-family: 'roboto-regular';
     font-size: 1em;
     cursor: pointer;
+    text-overflow: ellipsis;
 }
 
     button, input {
