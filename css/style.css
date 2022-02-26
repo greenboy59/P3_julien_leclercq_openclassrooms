@@ -20,12 +20,56 @@
     transform: translateY(100%);
   }
 }
-@keyframes loading-pulse {
-  from {
-    transform: scale(0.3);
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
   }
+  40% {
+    -webkit-transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+  }
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+  }
+}
+@-o-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -o-transform: translateY(0);
+  }
+  40% {
+    -o-transform: translateY(-30px);
+  }
+  60% {
+    -o-transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes food-fiesta {
   to {
-    transform: scale(1);
+    -webkit-transform: translate(-100%, 0);
+  }
+  from {
+    -webkit-transform: translate(0%, 0);
   }
 }
 @font-face {
@@ -62,7 +106,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -73,13 +118,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   width: 100%;
   object-fit: cover;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font-family: inherit;
 }
 
@@ -89,7 +141,8 @@ a {
   color: inherit;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "roboto-bold";
   padding: 20px 0;
 }
@@ -117,14 +170,16 @@ p {
   font-family: "roboto-light";
 }
 
-span, a {
+span,
+a {
   font-family: "roboto-regular";
   font-size: 1em;
   cursor: pointer;
   text-overflow: ellipsis;
 }
 
-button, input {
+button,
+input {
   font-family: "roboto-bold";
   border: none;
   background-color: transparent;
@@ -169,7 +224,8 @@ footer a:hover {
   flex-direction: column;
 }
 
-.legal-notice, .contact {
+.legal-notice,
+.contact {
   font-weight: 300;
 }
 
@@ -339,9 +395,8 @@ footer a:hover {
   height: 100vh;
   min-width: 100vw;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
   text-align: center;
   position: fixed;
   z-index: 4;
@@ -356,16 +411,60 @@ footer a:hover {
 .container-loader p {
   font-family: "shrikhand";
 }
+.container-loader strong {
+  font-family: "roboto-thin";
+}
 
-.container-loader__spining p {
+.container-loader__food-line,
+.container-loader__food-line-top-reverse {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 60px;
+  overflow: hidden;
+  bottom: 15px;
+}
+.container-loader__food-line i,
+.container-loader__food-line-top-reverse i {
+  width: fit-content;
+  color: #99e2d0;
+  font-size: 0.7em;
+}
+.container-loader__food-line .food-fiesta,
+.container-loader__food-line-top-reverse .food-fiesta {
+  white-space: nowrap;
+  animation: food-fiesta 10s linear infinite;
+}
+.container-loader__food-line .food-fiesta .line-2,
+.container-loader__food-line-top-reverse .food-fiesta .line-2 {
+  text-align: start;
+}
+.container-loader__food-line .food-fiesta .fa-utensils, .container-loader__food-line .food-fiesta .fa-handshake-angle,
+.container-loader__food-line-top-reverse .food-fiesta .fa-utensils,
+.container-loader__food-line-top-reverse .food-fiesta .fa-handshake-angle {
+  margin-right: 10px;
+}
+
+.loader-subtitle {
+  font-family: "roboto-thin";
+  font-size: 0.3em;
+  position: absolute;
+  top: 55%;
+}
+.loader-subtitle .bounce-points {
+  animation: 1s ease-in-out infinite bounce;
+  font-size: 15em;
+  line-height: 0.7;
   background: linear-gradient(360deg, #9356dc, #ff79da);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.3em;
-  width: 100px;
-  height: 100px;
-  animation: loading-pulse 1s infinite;
-  transition: all 0.5s;
+}
+
+.container-loader__food-line-top-reverse {
+  top: 15px;
+}
+.container-loader__food-line-top-reverse .food-fiesta {
+  animation-direction: reverse;
 }
 
 #localisation {
@@ -373,7 +472,7 @@ footer a:hover {
   -webkit-box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
   box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
   padding: 15px 0;
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   color: #353535;
   font-weight: 600;
   font-size: 1em;
@@ -409,7 +508,7 @@ footer a:hover {
   margin-bottom: 40px;
 }
 .howto__nav i {
-  color: #7E7E7E;
+  color: #7e7e7e;
   font-size: 1.2em;
   width: 35px;
   position: absolute;
@@ -468,7 +567,7 @@ footer a:hover {
   right: 15px;
   padding: 5px;
   background-color: #99e2d0;
-  color: #269D80;
+  color: #269d80;
   font-family: "roboto-bold";
   text-align: center;
   border-radius: 3px;
@@ -500,7 +599,8 @@ footer a:hover {
     gap: 30px;
   }
 
-  .legal-notice, .contact {
+  .legal-notice,
+.contact {
     margin-left: 30px;
   }
 }
@@ -545,11 +645,13 @@ footer a:hover {
     width: calc(70% - 15px);
   }
 
-  .howto__container, .restaurants {
+  .howto__container,
+.restaurants {
     background-color: whitesmoke;
     border-radius: 18px;
   }
-  .howto__container img, .restaurants img {
+  .howto__container img,
+.restaurants img {
     height: 170px;
   }
 
@@ -574,7 +676,8 @@ footer a:hover {
     left: inherit;
   }
 
-  .footer-links, footer h4 {
+  .footer-links,
+footer h4 {
     max-width: 1080px;
     padding: 25px 25px;
     justify-content: space-between;

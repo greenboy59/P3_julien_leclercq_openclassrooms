@@ -7,7 +7,7 @@
     border-radius: 25px;
     color: white;
     background: $main-gradient;
-    transition: box-shadow .8s, text-shadow .5s;
+    transition: box-shadow 0.8s, text-shadow 0.5s;
     &:hover {
         @include btn-hover-gradient;
     }
@@ -20,7 +20,7 @@
     height: 70px;
     padding-left: 80px;
     background-color: whitesmoke;
-    transition: all .8s;
+    transition: all 0.8s;
     &:hover {
         @include btn-hover;
     }
@@ -28,23 +28,22 @@
 
 .like-icon-regular {
     @include like-icon-positioning;
-    }
-
+}
 
 .like-icon-solid {
     @include like-icon-positioning;
     opacity: 0;
-    transition: all .8s;
+    transition: all 0.8s;
     &:hover {
-        animation: pulse 0.6s .8s infinite;
-        transition: all .5s linear;
+        animation: pulse 0.6s 0.8s infinite;
+        transition: all 0.5s linear;
         color: transparent;
         background-image: $secondary-gradient;
         -webkit-background-clip: text;
         background-clip: text;
         opacity: 1;
     }
-  }
+}
 
 .dishes-btn {
     @include cards-rounded-shadow;
@@ -54,71 +53,68 @@
     height: 70px;
     width: 100%;
     overflow: hidden;
-   &::before {
-    visibility: hidden;
-    display: inline-block;
-    position: absolute;
-    font-family: 'font-awesome 4 Free';
-    content: "\f058";
-    right: -20px;
-    top: 25%;
-    font-size: 25px;
-    transform: translate(0) rotate(90deg);
-    transition: all .5s;
-    color: white;
-   }
-   &:hover {
-       padding-right: 60px;
-       transition: all .5s;
-       &::before {
-           transform: translateX(-145%) rotate(1turn);
-           visibility: visible;
-           transition: all .5s;
-           z-index: 2;
-       }
-       & .dishes-btn__check {
+    &::before {
+        visibility: hidden;
+        display: inline-block;
         position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        border-radius: 0 15px 15px 0;
-        width: 100%;
-        border-right: 60px solid $tertiary-color;
-        transition: all .5s;
-}
-}
-}
-
- /* --- Régles sécifiques aux tablettes --- */
-
-  @media only screen and (min-width: 768px) {
-
-.howto__nav__button {
-    padding-left: 300px;
-}
-
-  }
-  
- /* --- Régles des boutons pour les pages menus --- */
-
- .like-icon-regular-menu {
-    @include like-icon-positioning-menu;
+        font-family: "font-awesome 4 Free";
+        content: "\f058";
+        right: -20px;
+        top: 25%;
+        font-size: 25px;
+        transform: translate(0) rotate(90deg);
+        transition: all 0.5s;
+        color: white;
     }
+    &:hover {
+        padding-right: 60px;
+        transition: all 0.5s;
+        &::before {
+            transform: translateX(-145%) rotate(1turn);
+            visibility: visible;
+            transition: all 0.5s;
+            z-index: 2;
+        }
+        & .dishes-btn__check {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            border-radius: 0 15px 15px 0;
+            width: 100%;
+            border-right: 60px solid $tertiary-color;
+            transition: all 0.5s;
+        }
+    }
+}
 
+/* --- Régles sécifiques aux tablettes --- */
+
+@media only screen and (min-width: 768px) {
+    .howto__nav__button {
+        padding-left: 300px;
+    }
+}
+
+/* --- Régles des boutons pour les pages menus --- */
+
+.like-icon-regular-menu {
+    @include like-icon-positioning-menu;
+}
 
 .like-icon-solid-menu {
     @include like-icon-positioning-menu;
     opacity: 0;
-    transition: all .8s;
+    transition: all 0.8s;
     &:hover {
-        animation: pulse 0.6s .8s infinite;
+        animation: pulse 0.6s 0.8s infinite;
         color: transparent;
         background-image: $secondary-gradient;
         -webkit-background-clip: text;
         background-clip: text;
         opacity: 1;
     }
-  }
+}
 
 .order-btn {
     @include flex-align-items-center-justify-content-center;
@@ -127,4 +123,3 @@
         margin: 0 0 40px 0;
     }
 }
-

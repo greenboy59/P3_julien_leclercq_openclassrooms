@@ -18,8 +18,7 @@
   },
   "homepage": "https://github.com/greenboy59/P3_leclercq_julien#readme",
   "devDependencies": {
-    "sass": "^1.49.7",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "sass": "^1.49.7"
   }
 }
-

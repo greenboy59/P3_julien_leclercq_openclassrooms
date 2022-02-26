@@ -23,7 +23,7 @@
 @mixin btn-hover {
     opacity: 0.8;
     box-shadow: 0 1px 12px 1px $primary-color;
-    background: rgba(147, 86, 220, .2);
+    background: rgba(147, 86, 220, 0.2);
     & i {
         color: $primary-color;
     }

@@ -3,14 +3,11 @@
 .container-loader {
     height: 100vh;
     min-width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-align-items-center-justify-content-center;
     text-align: center;
     position: fixed;
     z-index: 4;
-    background-color: rgba(255, 255, 255);
+    background-color: rgb(255, 255, 255);
     font-size: 3em;
     color: black;
     animation: loading-disappear 4s forwards;
@@ -18,238 +15,277 @@
     -moz-transform-origin: top;
     -webkit-transform-origin: top;
     & p {
-        font-family:'shrikhand';
+        font-family: "shrikhand";
     }
-}   
-
-.container-loader__spining p {
-    background: $main-gradient;
-    -webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-    font-size: 1.3em;
-    width: 100px;
-    height: 100px;
-    animation: loading-pulse 1s infinite;
-    transition: all 0.5s;
+    & strong {
+        font-family: "roboto-thin";
+    }
 }
-    
-    #localisation {
-        @include top-box-shadow-inset;
-        padding: 15px 0;
-        background-color: #EAEAEA;
-        color: #353535;
-        font-weight: 600;
-        font-size: 1em;
-        & i {
-            padding-right: 20px;
-        }
-    }
-    
-    .call-to-action {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: whitesmoke;
-    }
-    
-    /* Section, fonctionnement */
 
-    .howto__container {
-        background-color: white;
-        padding: 20px 20px 20px 32px;
+.container-loader__food-line,
+.container-loader__food-line-top-reverse {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 60px;
+    overflow: hidden;
+    bottom: 15px;
+    & i {
+        width: fit-content;
+        color: $tertiary-color;
+        font-size: 0.7em;
     }
+    & .food-fiesta {
+        white-space: nowrap;
+        animation: food-fiesta 10s linear infinite;
+        & .line-2 {
+            text-align: start;
+        }
+        & .fa-utensils {
+            margin-right: 10px;
+        }
+    }
+}
 
-    .fas {
-        display: inline-block;
-        text-align: center;
+.loader-subtitle {
+    font-family: "roboto-thin";
+    font-size: 0.3em;
+    position: absolute;
+    top: 55%;
+    & .bounce-points {
+        animation: 1s ease-in-out infinite bounce;
+        font-size: 15em;
+        line-height: 0.7;
+        background: $main-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
-    
-    .howto__nav {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        margin-bottom: 40px;
-        & i {
-            color: #7E7E7E;
-            font-size: 1.2em;
-            width: 35px;
-            position: absolute;
-            left: 35px;
-        }
-        & p {
-            font-family: 'roboto-regular';
-        }
+}
+
+.container-loader__food-line-top-reverse {
+    top: 15px;
+    & .food-fiesta {
+        animation-direction: reverse;
     }
-    
-    /* Création de la petite pastille avec les nombres */
-    
-    .number-circle {
-        @include flex-align-items-center-justify-content-center;
+}
+
+#localisation {
+    @include top-box-shadow-inset;
+    padding: 15px 0;
+    background-color: #eaeaea;
+    color: #353535;
+    font-weight: 600;
+    font-size: 1em;
+    & i {
+        padding-right: 20px;
+    }
+}
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: whitesmoke;
+}
+
+/* Section, fonctionnement */
+
+.howto__container {
+    background-color: white;
+    padding: 20px 20px 20px 32px;
+}
+
+.fas {
+    display: inline-block;
+    text-align: center;
+}
+
+.howto__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+    & i {
+        color: #7e7e7e;
+        font-size: 1.2em;
+        width: 35px;
         position: absolute;
-        left: -12px;
-        width: 27px;
-        height: 27px;
-        border-radius: 20px;
-        background-color: $primary-color;
-        color: white;
-        font-weight: bold;
+        left: 35px;
     }
-    
-    /* section restaurants */
+    & p {
+        font-family: "roboto-regular";
+    }
+}
 
-    .restaurants {
-        padding: 20px;
-        background-color: whitesmoke;
+/* Création de la petite pastille avec les nombres */
+
+.number-circle {
+    @include flex-align-items-center-justify-content-center;
+    position: absolute;
+    left: -12px;
+    width: 27px;
+    height: 27px;
+    border-radius: 20px;
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+}
+
+/* section restaurants */
+
+.restaurants {
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.restaurants__card {
+    @include cards-rounded-shadow;
+    position: relative;
+    margin-bottom: 20px;
+    transition: all 400ms;
+    cursor: pointer;
+    &:hover {
+        @include cards-rounded-shadow-hover;
     }
-    
-    .restaurants__card {
-        @include cards-rounded-shadow;
+    & img {
+        border-radius: 15px 15px 0 0;
+        height: 170px;
+    }
+    &__text {
         position: relative;
-        margin-bottom: 20px;
-        transition: all 400ms;
-        cursor: pointer;
-        &:hover {
-            @include cards-rounded-shadow-hover;
-        }
+        padding: 15px 15px;
+    }
+}
+
+.new-label {
+    position: absolute;
+    width: 90px;
+    top: 15px;
+    right: 15px;
+    padding: 5px;
+    background-color: $tertiary-color;
+    color: #269d80;
+    font-family: "roboto-bold";
+    text-align: center;
+    border-radius: 3px;
+}
+
+/* Nouvelles règles pour les tablettes */
+
+@media only screen and (min-width: 768px) {
+    .howto__container {
+        padding: 20px;
+    }
+
+    .howto__nav i {
+        left: 200px;
+    }
+
+    .number-circle {
+        top: -15px;
+        left: 50%;
+    }
+
+    .restaurants-grid {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    }
+
+    .footer-links {
+        flex-direction: row;
+        gap: 30px;
+    }
+    .legal-notice,
+    .contact {
+        margin-left: 30px;
+    }
+}
+
+/* Nouvelles règles pour le desktop */
+
+@media screen and (min-width: 900px) {
+    #wrapper {
+        max-width: unset;
+        min-width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #logo {
+        padding: 40px 0;
         & img {
-            border-radius: 15px 15px 0 0;
+            width: 20vw;
+        }
+    }
+
+    #localisation {
+        padding: 40px 0;
+        font-size: 1.5em;
+    }
+
+    .call-to-action {
+        background-color: white;
+        padding: 50px 0 0 0;
+    }
+
+    main {
+        max-width: 1080px;
+        width: 100%;
+        padding: 40px 20px 60px 20px;
+        display: flex;
+        align-self: center;
+        gap: 20px;
+        & #howto {
+            width: calc(30% - 15px);
+        }
+        & .restaurants {
+            width: calc(70% - 15px);
+        }
+    }
+
+    .howto__container,
+    .restaurants {
+        background-color: whitesmoke;
+        border-radius: 18px;
+        & img {
             height: 170px;
         }
-        &__text {
-            position: relative;
-            padding: 15px 15px;
-        }
-    }
-    
-    .new-label {
-        position: absolute;
-        width: 90px;
-        top: 15px;
-        right: 15px;
-        padding: 5px;
-        background-color: $tertiary-color;
-        color: #269D80;
-        font-family: 'roboto-bold';
-        text-align: center;
-        border-radius: 3px;
     }
 
-    /* Nouvelles règles pour les tablettes */
-
-    @media only screen and (min-width: 768px) {
-
-        .howto__container {
-            padding: 20px;
-        }
-
-        .howto__nav i {
-            left: 200px;
-        }
-
-        .number-circle {
-            top: -15px;
-            left: 50%;
-        }
-
-        .restaurants-grid {
-            display: grid;
-            justify-content: space-between;
-            grid-template-columns: calc(50% - 10px) calc(50% - 10px);
-        }
-
-        .footer-links {
-            flex-direction: row;
-            gap: 30px;
-        }
-        .legal-notice, .contact {
-            margin-left: 30px;
-            }
-    }
-
-    /* Nouvelles règles pour le desktop */
-
-    @media screen and (min-width: 900px) {
-
-        #wrapper {
-            max-width: unset;
-            min-width: 100vw;
-            display: flex;
+    .howto__nav {
+        margin-bottom: 0;
+        &__button {
             flex-direction: column;
+            justify-content: space-around;
+            height: 155px;
+            padding: 30px;
+            text-align: center;
         }
-
-        #logo {
-            padding: 40px 0;
-            & img {
-                width: 20vw;
-            }
+        & i {
+            margin: 15px 0;
+            position: inherit;
+            left: inherit;
+            font-size: xx-large;
         }
-
-        #localisation {
-            padding: 40px 0;
-            font-size: 1.5em;
+        & .number-circle {
+            top: -12px;
+            left: inherit;
         }
-
-        .call-to-action {
-            background-color: white;
-            padding: 50px 0 0 0;
-        }
-
-        main {
-            max-width: 1080px;
-            width: 100%;
-            padding: 40px 20px 60px 20px;
-            display: flex;
-            align-self: center;
-            gap: 20px;
-            & #howto {
-                width: calc(30% - 15px);
-            }
-            & .restaurants {
-                width: calc(70% - 15px);
-            }
-        }
-
-        .howto__container, .restaurants {
-            background-color: whitesmoke;
-            border-radius: 18px;
-            & img {
-                height: 170px;
-            }
-        }
-
-        .howto__nav {
-            margin-bottom: 0;
-            &__button {
-                flex-direction: column;
-                justify-content: space-around;
-                height: 155px;
-                padding: 30px;
-                text-align: center;
-        }
-            & i {
-                margin: 15px 0;
-                position: inherit;
-                left: inherit;
-                font-size: xx-large;
-            }
-            & .number-circle {
-                top: -12px;
-                left: inherit;
-            }
-        }
-
-        .footer-links, footer h4 {
-            max-width: 1080px;
-            padding: 25px 25px;
-            justify-content: space-between;
-            margin: 0 auto;
-        }
-
-        .footer h4 {
-            padding: 0;
-            font-size: 2em;
-        }
-
     }
+
+    .footer-links,
+    footer h4 {
+        max-width: 1080px;
+        padding: 25px 25px;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    .footer h4 {
+        padding: 0;
+        font-size: 2em;
+    }
+}
