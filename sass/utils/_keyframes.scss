@@ -43,11 +43,7 @@
 }
 
 @-moz-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
+  0%, 20%, 50%, 80%, 100% {
     -moz-transform: translateY(0);
   }
   40% {
@@ -91,10 +87,21 @@
 
 @keyframes food-fiesta {
   to {
-    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
   }
 
   from {
-    -webkit-transform: translate(0%, 0);
+    transform: translate(0%, 0);
+  }
+}
+
+@keyframes check-btn {
+  from {
+    border-right: 60px solid $tertiary-color;
+    transition: $main-transition-all-5s-linear;
+    transform: translateX(-1000%);
+  }
+  to {
+    transform: translateX(0%);
   }
 }

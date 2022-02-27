@@ -5,3 +5,4 @@ $quaternary-color: rgb(234, 234, 234);
 $main-gradient: linear-gradient(360deg, $primary-color, $secondary-color);
 $secondary-gradient: linear-gradient(360deg, $secondary-color, $primary-color);
 $hover-gradient: linear-gradient(360deg, rgb(159, 110, 219), rgb(252, 146, 222));
+$main-transition-all-5s-linear: all .5s linear;

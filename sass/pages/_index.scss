@@ -1,24 +1,23 @@
 /* --- Loader --- */
 
 .container-loader {
+    animation: loading-disappear 4s forwards;
+    transform-origin: top;
     height: 100vh;
-    min-width: 100vw;
-    @include flex-align-items-center-justify-content-center;
+    width: 100vw;
     text-align: center;
     position: fixed;
     z-index: 4;
     background-color: rgb(255, 255, 255);
     font-size: 3em;
     color: black;
-    animation: loading-disappear 4s forwards;
-    transform-origin: top;
-    -moz-transform-origin: top;
-    -webkit-transform-origin: top;
-    & p {
-        font-family: "shrikhand";
-    }
     & strong {
         font-family: "roboto-thin";
+    }
+    & > p {
+        @include position-absolute-center;
+        margin-top: -100px;
+        font-family: "shrikhand";
     }
 }
 
@@ -26,10 +25,10 @@
 .container-loader__food-line-top-reverse {
     position: absolute;
     display: flex;
-    width: 100vw;
+    align-items: center;
     height: 60px;
     overflow: hidden;
-    bottom: 15px;
+    bottom: 25px;
     & i {
         width: fit-content;
         color: $tertiary-color;
@@ -47,25 +46,25 @@
     }
 }
 
-.loader-subtitle {
-    font-family: "roboto-thin";
-    font-size: 0.3em;
-    position: absolute;
-    top: 55%;
-    & .bounce-points {
-        animation: 1s ease-in-out infinite bounce;
-        font-size: 15em;
-        line-height: 0.7;
-        background: $main-gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-}
-
 .container-loader__food-line-top-reverse {
     top: 15px;
     & .food-fiesta {
         animation-direction: reverse;
+    }
+}
+
+.loader-subtitle {
+    font-family: "roboto-thin";
+    @include position-absolute-center;
+    margin-top: 70px;
+    font-size: 0.3em;
+    & .bounce-points {
+        animation: 1s ease-in-out infinite bounce;
+        font-size: 200px;
+        line-height: 0.7;
+        background: $main-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
 
@@ -175,6 +174,15 @@
 /* Nouvelles règles pour les tablettes */
 
 @media only screen and (min-width: 768px) {
+
+    .container-loader__food-line,
+.container-loader__food-line-top-reverse {
+    & i {
+        width: 80px;
+    }
+}
+
+
     .howto__container {
         padding: 20px;
     }
@@ -207,6 +215,14 @@
 /* Nouvelles règles pour le desktop */
 
 @media screen and (min-width: 900px) {
+
+    .container-loader__food-line,
+.container-loader__food-line-top-reverse {
+    & i {
+        width: 250px;
+    }
+}
+
     #wrapper {
         max-width: unset;
         min-width: 100vw;

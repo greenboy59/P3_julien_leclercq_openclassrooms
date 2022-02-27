@@ -26,17 +26,17 @@ main {
 }
 
 #wrapper-menu {
-    top: -50px;
     padding: 0 20px;
     border-radius: 40px 40px 0 0;
     background-color: whitesmoke;
+    margin-top: -50px;
     & h2 {
         padding: 7px 0;
     }
 }
 
 .title-menu-like-icon {
-    position: relative;
+    transition: $main-transition-all-5s-linear;
 }
 
 .partial-underline {
@@ -75,14 +75,25 @@ main {
     }
 }
 
-.footer-menu {
-    position: relative;
-    top: -50px;
-}
-
 /* --- Nouvelles règles pour les tablettes --- */
 
 @media only screen and (min-width: 768px) {
-    
+
+    .container-menus {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+        grid-template-rows: auto;
+    }
+
+    .order-btn {
+        width: 100vw;
+        text-align: center;
+    }
+
+    .desserts {
+        
+    }
+
 }
 

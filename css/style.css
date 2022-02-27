@@ -66,10 +66,20 @@
 }
 @keyframes food-fiesta {
   to {
-    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
   }
   from {
-    -webkit-transform: translate(0%, 0);
+    transform: translate(0%, 0);
+  }
+}
+@keyframes check-btn {
+  from {
+    border-right: 60px solid #99e2d0;
+    transition: all 0.5s linear;
+    transform: translateX(-1000%);
+  }
+  to {
+    transform: translateX(0%);
   }
 }
 @font-face {
@@ -277,11 +287,17 @@ footer a:hover {
   color: #9356dc;
 }
 
+/* --- Icone coeur animée --- */
 .like-icon-regular {
   position: absolute;
   top: 35%;
   right: 10%;
   font-size: 25px;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+.like-icon-regular:hover {
+  opacity: 0;
 }
 
 .like-icon-solid {
@@ -289,12 +305,15 @@ footer a:hover {
   top: 35%;
   right: 10%;
   font-size: 25px;
+  color: transparent;
   opacity: 0;
-  transition: all 0.8s;
+  background-image: linear-gradient(360deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: opacity 1s ease-in;
 }
 .like-icon-solid:hover {
   animation: pulse 0.6s 0.8s infinite;
-  transition: all 0.5s linear;
   color: transparent;
   background-image: linear-gradient(360deg, #ff79da, #9356dc);
   -webkit-background-clip: text;
@@ -302,6 +321,7 @@ footer a:hover {
   opacity: 1;
 }
 
+/* --- Bouton des plats avec check pivotant --- */
 .dishes-btn {
   box-shadow: 1px 1px 15px 1px gainsboro;
   border-radius: 15px;
@@ -312,39 +332,48 @@ footer a:hover {
   height: 70px;
   width: 100%;
   overflow: hidden;
+  transition: all 0.5s linear;
+  /* --- Pseudo élément pour le background vert --- */
+  /* --- Pseudo élément pour l'icone check --- */
 }
-.dishes-btn::before {
-  visibility: hidden;
-  display: inline-block;
-  position: absolute;
-  font-family: "font-awesome 4 Free";
-  content: "\f058";
-  right: -20px;
-  top: 25%;
-  font-size: 25px;
-  transform: translate(0) rotate(90deg);
-  transition: all 0.5s;
-  color: white;
-}
-.dishes-btn:hover {
-  padding-right: 60px;
-  transition: all 0.5s;
-}
-.dishes-btn:hover::before {
-  transform: translateX(-145%) rotate(1turn);
-  visibility: visible;
-  transition: all 0.5s;
-  z-index: 2;
-}
-.dishes-btn:hover .dishes-btn__check {
+.dishes-btn::after {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
+  width: 18%;
   height: 100%;
-  border-radius: 0 15px 15px 0;
-  width: 100%;
-  border-right: 60px solid #99e2d0;
-  transition: all 0.5s;
+  background-color: #99e2d0;
+  transform: translateX(100%);
+  transition: all 0.5s linear;
+}
+.dishes-btn::before {
+  content: "\f058";
+  visibility: hidden;
+  position: absolute;
+  font-family: "font-awesome 4 Free";
+  right: 0;
+  top: 25%;
+  font-size: 25px;
+  transform: translateX(100%) rotate(90deg);
+  color: white;
+  z-index: 2;
+  transition: all 0.4s linear;
+}
+.dishes-btn:hover {
+  padding-right: 60px;
+}
+.dishes-btn:hover::after {
+  background-color: #99e2d0;
+  width: 18%;
+  transform: translateX(0%);
+  transition: all 0.5s linear;
+}
+.dishes-btn:hover::before {
+  transform: translate(-70%) rotate(1turn);
+  visibility: visible;
+  transition: all 0.5s linear;
+  z-index: 2;
 }
 
 /* --- Régles sécifiques aux tablettes --- */
@@ -369,7 +398,7 @@ footer a:hover {
   font-size: 25px;
   width: fit-content;
   opacity: 0;
-  transition: all 0.8s;
+  transition: all 1s;
 }
 .like-icon-solid-menu:hover {
   animation: pulse 0.6s 0.8s infinite;
@@ -392,37 +421,37 @@ footer a:hover {
 
 /* --- Loader --- */
 .container-loader {
+  animation: loading-disappear 4s forwards;
+  transform-origin: top;
   height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100vw;
   text-align: center;
   position: fixed;
   z-index: 4;
   background-color: white;
   font-size: 3em;
   color: black;
-  animation: loading-disappear 4s forwards;
-  transform-origin: top;
-  -moz-transform-origin: top;
-  -webkit-transform-origin: top;
-}
-.container-loader p {
-  font-family: "shrikhand";
 }
 .container-loader strong {
   font-family: "roboto-thin";
+}
+.container-loader > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -100px;
+  font-family: "shrikhand";
 }
 
 .container-loader__food-line,
 .container-loader__food-line-top-reverse {
   position: absolute;
   display: flex;
-  width: 100vw;
+  align-items: center;
   height: 60px;
   overflow: hidden;
-  bottom: 15px;
+  bottom: 25px;
 }
 .container-loader__food-line i,
 .container-loader__food-line-top-reverse i {
@@ -445,26 +474,29 @@ footer a:hover {
   margin-right: 10px;
 }
 
-.loader-subtitle {
-  font-family: "roboto-thin";
-  font-size: 0.3em;
-  position: absolute;
-  top: 55%;
-}
-.loader-subtitle .bounce-points {
-  animation: 1s ease-in-out infinite bounce;
-  font-size: 15em;
-  line-height: 0.7;
-  background: linear-gradient(360deg, #9356dc, #ff79da);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .container-loader__food-line-top-reverse {
   top: 15px;
 }
 .container-loader__food-line-top-reverse .food-fiesta {
   animation-direction: reverse;
+}
+
+.loader-subtitle {
+  font-family: "roboto-thin";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 70px;
+  font-size: 0.3em;
+}
+.loader-subtitle .bounce-points {
+  animation: 1s ease-in-out infinite bounce;
+  font-size: 200px;
+  line-height: 0.7;
+  background: linear-gradient(360deg, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #localisation {
@@ -575,6 +607,11 @@ footer a:hover {
 
 /* Nouvelles règles pour les tablettes */
 @media only screen and (min-width: 768px) {
+  .container-loader__food-line i,
+.container-loader__food-line-top-reverse i {
+    width: 80px;
+  }
+
   .howto__container {
     padding: 20px;
   }
@@ -606,6 +643,11 @@ footer a:hover {
 }
 /* Nouvelles règles pour le desktop */
 @media screen and (min-width: 900px) {
+  .container-loader__food-line i,
+.container-loader__food-line-top-reverse i {
+    width: 250px;
+  }
+
   #wrapper {
     max-width: unset;
     min-width: 100vw;
@@ -716,17 +758,17 @@ main {
 }
 
 #wrapper-menu {
-  top: -50px;
   padding: 0 20px;
   border-radius: 40px 40px 0 0;
   background-color: whitesmoke;
+  margin-top: -50px;
 }
 #wrapper-menu h2 {
   padding: 7px 0;
 }
 
 .title-menu-like-icon {
-  position: relative;
+  transition: all 0.5s linear;
 }
 
 .partial-underline {
@@ -765,11 +807,19 @@ main {
   white-space: nowrap;
 }
 
-.footer-menu {
-  position: relative;
-  top: -50px;
-}
-
 /* --- Nouvelles règles pour les tablettes --- */
+@media only screen and (min-width: 768px) {
+  .container-menus {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    grid-template-rows: auto;
+  }
+
+  .order-btn {
+    width: 100vw;
+    text-align: center;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
