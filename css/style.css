@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* --- Pulsations du coeur --- */
+/* --- Pulsations de l'icone coeur --- */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -75,11 +75,25 @@
 @keyframes check-btn {
   from {
     border-right: 60px solid #99e2d0;
-    transition: all 0.5s linear;
+    transition: all 0.5s ease-out;
     transform: translateX(-1000%);
   }
   to {
     transform: translateX(0%);
+  }
+}
+@keyframes dishes-appearance {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 @font-face {
@@ -200,6 +214,178 @@ input {
   max-width: 1024px;
 }
 
+.call-to-action__btn {
+  -webkit-box-shadow: 0 7px 10px -5px #8e8e8e;
+  -moz-box-shadow: 0 7px 10px -5px #8e8e8e;
+  box-shadow: 0 7px 10px -5px #8e8e8e;
+  display: block;
+  padding: 13px 15px;
+  margin: 25px 0;
+  width: fit-content;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(360deg, #9356dc, #ff79da);
+  transition: box-shadow 0.8s, text-shadow 0.5s;
+}
+.call-to-action__btn:hover {
+  background: linear-gradient(360deg, #9f6edb, #fc92de);
+  box-shadow: 1px 1px 12px 1px #9356dc;
+  text-shadow: 1px 1px 0 #9356dc;
+}
+
+.howto__nav__button {
+  box-shadow: 1px 1px 15px 1px gainsboro;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding-left: 80px;
+  background-color: whitesmoke;
+  transition: all 0.8s;
+}
+.howto__nav__button:hover {
+  opacity: 0.8;
+  box-shadow: 0 1px 12px 1px #9356dc;
+  background: rgba(147, 86, 220, 0.2);
+}
+.howto__nav__button:hover i {
+  color: #9356dc;
+}
+
+/* --- Icone coeur animé --- */
+.container-like-icon {
+  width: 35px;
+  height: 35px;
+  font-family: "font-awesome 4 Free";
+  position: absolute;
+  top: 75%;
+  right: 5%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  overflow: hidden;
+}
+.container-like-icon::before {
+  content: "\f004";
+  display: block;
+  font-weight: 400;
+}
+.container-like-icon::before::after {
+  position: absolute;
+  content: "\f004";
+  display: block;
+  color: transparent;
+  background-image: linear-gradient(360deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transform: translateY(100%);
+}
+.container-like-icon::before:hover + ::after {
+  transform: translateY(0);
+}
+
+/* --- Test de l'animation via pseudos-éléments - a garder en cas d'échec --- */
+/* --- Bouton des plats avec check pivotant --- */
+.dishes-btn {
+  box-shadow: 1px 1px 15px 1px gainsboro;
+  border-radius: 15px;
+  position: relative;
+  position: relative;
+  font-size: 0.9em;
+  padding: 10px;
+  height: 70px;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  /* --- Pseudo élément pour le background vert --- */
+  /* --- Pseudo élément pour l'icone check --- */
+}
+.dishes-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 18%;
+  height: 100%;
+  background-color: #99e2d0;
+  transform: translateX(100%);
+  transition: all 0.5s ease-out;
+}
+.dishes-btn::before {
+  content: "\f058";
+  visibility: hidden;
+  position: absolute;
+  font-family: "font-awesome 4 Free";
+  right: 0;
+  top: 25%;
+  font-size: 25px;
+  transform: translateX(100%) rotate(90deg);
+  color: white;
+  z-index: 2;
+  transition: all 0.4s linear;
+}
+.dishes-btn:hover {
+  padding-right: 60px;
+}
+.dishes-btn:hover::after {
+  background-color: #99e2d0;
+  width: 18%;
+  transform: translateX(0%);
+  transition: all 0.5s ease-out;
+}
+.dishes-btn:hover::before {
+  transform: translate(-70%) rotate(1turn);
+  visibility: visible;
+  transition: all 0.5s ease-out;
+  z-index: 2;
+}
+
+/* --- Régles sécifiques aux tablettes --- */
+@media only screen and (min-width: 768px) {
+  .howto__nav__button {
+    padding-left: 300px;
+  }
+}
+/* --- Régles des boutons pour les pages menus --- */
+.like-icon-regular-menu {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  font-size: 25px;
+  width: fit-content;
+}
+
+.like-icon-solid-menu {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  font-size: 25px;
+  width: fit-content;
+  opacity: 0;
+  transition: all 1s;
+}
+.like-icon-solid-menu:hover {
+  animation: pulse 0.6s 0.8s infinite;
+  color: transparent;
+  background-image: linear-gradient(360deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 1;
+}
+
+.order-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-btn .call-to-action__btn {
+  padding: 15px 50px;
+  margin: 0 0 40px 0;
+}
+
 /* Header */
 header, #logo {
   margin: 0 auto;
@@ -248,181 +434,9 @@ footer a:hover {
   margin-right: 10px;
 }
 
-.call-to-action__btn {
-  -webkit-box-shadow: 0 7px 10px -5px #8e8e8e;
-  -moz-box-shadow: 0 7px 10px -5px #8e8e8e;
-  box-shadow: 0 7px 10px -5px #8e8e8e;
-  display: block;
-  padding: 13px 15px;
-  margin: 25px 0;
-  width: fit-content;
-  border-radius: 25px;
-  color: white;
-  background: linear-gradient(360deg, #9356dc, #ff79da);
-  transition: box-shadow 0.8s, text-shadow 0.5s;
-}
-.call-to-action__btn:hover {
-  background: linear-gradient(360deg, #9f6edb, #fc92de);
-  box-shadow: 1px 1px 12px 1px #9356dc;
-  text-shadow: 1px 1px 0 #9356dc;
-}
-
-.howto__nav__button {
-  box-shadow: 1px 1px 15px 1px gainsboro;
-  border-radius: 15px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 70px;
-  padding-left: 80px;
-  background-color: whitesmoke;
-  transition: all 0.8s;
-}
-.howto__nav__button:hover {
-  opacity: 0.8;
-  box-shadow: 0 1px 12px 1px #9356dc;
-  background: rgba(147, 86, 220, 0.2);
-}
-.howto__nav__button:hover i {
-  color: #9356dc;
-}
-
-/* --- Icone coeur animée --- */
-.like-icon-regular {
-  position: absolute;
-  top: 35%;
-  right: 10%;
-  font-size: 25px;
-  opacity: 1;
-  transition: opacity 1s ease-out;
-}
-.like-icon-regular:hover {
-  opacity: 0;
-}
-
-.like-icon-solid {
-  position: absolute;
-  top: 35%;
-  right: 10%;
-  font-size: 25px;
-  color: transparent;
-  opacity: 0;
-  background-image: linear-gradient(360deg, #ff79da, #9356dc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  transition: opacity 1s ease-in;
-}
-.like-icon-solid:hover {
-  animation: pulse 0.6s 0.8s infinite;
-  color: transparent;
-  background-image: linear-gradient(360deg, #ff79da, #9356dc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  opacity: 1;
-}
-
-/* --- Bouton des plats avec check pivotant --- */
-.dishes-btn {
-  box-shadow: 1px 1px 15px 1px gainsboro;
-  border-radius: 15px;
-  position: relative;
-  position: relative;
-  font-size: 0.9em;
-  padding: 10px;
-  height: 70px;
-  width: 100%;
-  overflow: hidden;
-  transition: all 0.5s linear;
-  /* --- Pseudo élément pour le background vert --- */
-  /* --- Pseudo élément pour l'icone check --- */
-}
-.dishes-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 18%;
-  height: 100%;
-  background-color: #99e2d0;
-  transform: translateX(100%);
-  transition: all 0.5s linear;
-}
-.dishes-btn::before {
-  content: "\f058";
-  visibility: hidden;
-  position: absolute;
-  font-family: "font-awesome 4 Free";
-  right: 0;
-  top: 25%;
-  font-size: 25px;
-  transform: translateX(100%) rotate(90deg);
-  color: white;
-  z-index: 2;
-  transition: all 0.4s linear;
-}
-.dishes-btn:hover {
-  padding-right: 60px;
-}
-.dishes-btn:hover::after {
-  background-color: #99e2d0;
-  width: 18%;
-  transform: translateX(0%);
-  transition: all 0.5s linear;
-}
-.dishes-btn:hover::before {
-  transform: translate(-70%) rotate(1turn);
-  visibility: visible;
-  transition: all 0.5s linear;
-  z-index: 2;
-}
-
-/* --- Régles sécifiques aux tablettes --- */
-@media only screen and (min-width: 768px) {
-  .howto__nav__button {
-    padding-left: 300px;
-  }
-}
-/* --- Régles des boutons pour les pages menus --- */
-.like-icon-regular-menu {
-  position: absolute;
-  top: 35px;
-  right: 20px;
-  font-size: 25px;
-  width: fit-content;
-}
-
-.like-icon-solid-menu {
-  position: absolute;
-  top: 35px;
-  right: 20px;
-  font-size: 25px;
-  width: fit-content;
-  opacity: 0;
-  transition: all 1s;
-}
-.like-icon-solid-menu:hover {
-  animation: pulse 0.6s 0.8s infinite;
-  color: transparent;
-  background-image: linear-gradient(360deg, #ff79da, #9356dc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  opacity: 1;
-}
-
-.order-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.order-btn .call-to-action__btn {
-  padding: 15px 50px;
-  margin: 0 0 40px 0;
-}
-
 /* --- Loader --- */
 .container-loader {
-  animation: loading-disappear 4s forwards;
-  transform-origin: top;
+  animation: loading-disappear 3s forwards;
   height: 100vh;
   width: 100vw;
   text-align: center;
@@ -430,7 +444,7 @@ footer a:hover {
   z-index: 4;
   background-color: white;
   font-size: 3em;
-  color: black;
+  z-index: 999;
 }
 .container-loader strong {
   font-family: "roboto-thin";
@@ -590,6 +604,7 @@ footer a:hover {
 .restaurants__card__text {
   position: relative;
   padding: 15px 15px;
+  width: fit-content;
 }
 
 .new-label {
@@ -753,6 +768,10 @@ footer h4 {
   padding: 0 15px;
 }
 
+.hero-image img {
+  height: 250px;
+}
+
 main {
   position: relative;
 }
@@ -761,14 +780,22 @@ main {
   padding: 0 20px;
   border-radius: 40px 40px 0 0;
   background-color: whitesmoke;
-  margin-top: -50px;
+  margin-top: -13%;
 }
 #wrapper-menu h2 {
   padding: 7px 0;
 }
-
-.title-menu-like-icon {
-  transition: all 0.5s linear;
+#wrapper-menu .entries {
+  animation: dishes-appearance 1s ease-out;
+  animation-duration: 1s;
+}
+#wrapper-menu .dishes {
+  animation: dishes-appearance 1s ease-out;
+  animation-duration: 1.5s;
+}
+#wrapper-menu .desserts {
+  animation: dishes-appearance 1s ease-out;
+  animation-duration: 2s;
 }
 
 .partial-underline {

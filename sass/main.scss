@@ -4,13 +4,11 @@
 
 @import "base/fonts";
 @import "base/commons";
-@import "base/header";
-@import "base/footer";
 
 @import "components/buttons";
 
+@import "layouts/header";
+@import "layouts/footer";
+
 @import "pages/index";
-@import "pages/menu-à-la-française";
-@import "pages/menu-la-note-enchantée";
-@import "pages/menu-la-palette-du-goût";
-@import "pages/menu-le-délice-des-sens";
+@import "pages/menus";

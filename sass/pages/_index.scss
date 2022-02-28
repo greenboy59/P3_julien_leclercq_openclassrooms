@@ -1,8 +1,7 @@
 /* --- Loader --- */
 
 .container-loader {
-    animation: loading-disappear 4s forwards;
-    transform-origin: top;
+    animation: loading-disappear 3s forwards;
     height: 100vh;
     width: 100vw;
     text-align: center;
@@ -10,7 +9,7 @@
     z-index: 4;
     background-color: rgb(255, 255, 255);
     font-size: 3em;
-    color: black;
+    z-index: 999;
     & strong {
         font-family: "roboto-thin";
     }
@@ -155,6 +154,7 @@
     &__text {
         position: relative;
         padding: 15px 15px;
+        width: fit-content;
     }
 }
 
@@ -174,14 +174,12 @@
 /* Nouvelles règles pour les tablettes */
 
 @media only screen and (min-width: 768px) {
-
     .container-loader__food-line,
-.container-loader__food-line-top-reverse {
-    & i {
-        width: 80px;
+    .container-loader__food-line-top-reverse {
+        & i {
+            width: 80px;
+        }
     }
-}
-
 
     .howto__container {
         padding: 20px;
@@ -215,13 +213,12 @@
 /* Nouvelles règles pour le desktop */
 
 @media screen and (min-width: 900px) {
-
     .container-loader__food-line,
-.container-loader__food-line-top-reverse {
-    & i {
-        width: 250px;
+    .container-loader__food-line-top-reverse {
+        & i {
+            width: 250px;
+        }
     }
-}
 
     #wrapper {
         max-width: unset;
