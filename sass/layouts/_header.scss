@@ -1,17 +1,17 @@
-    /* Header */
-    
-    header, #logo {
+/* Header */
+
+header,
+#logo {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+#logo {
+    padding: 20px 0;
+    background-color: white;
+    & img {
+        width: 45vw;
         margin: 0 auto;
-        text-align: center;
-        width: 100%;
     }
-    
-    #logo {
-        padding: 20px 0;
-        background-color: white;
-        & img {
-            width: 45vw;
-            margin: 0 auto;
-        }
-    }
-    
+}

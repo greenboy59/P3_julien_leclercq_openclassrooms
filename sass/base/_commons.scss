@@ -64,11 +64,14 @@ h4 {
   font-size: 1.2em;
 }
 
-p {
+h5 {
+  font-family: 'roboto-thin';
+}
+
+p, span {
   font-family: "roboto-light";
 }
 
-span,
 a {
   font-family: "roboto-regular";
   font-size: 1em;

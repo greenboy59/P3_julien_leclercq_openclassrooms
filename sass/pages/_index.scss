@@ -6,7 +6,6 @@
     width: 100vw;
     text-align: center;
     position: fixed;
-    z-index: 4;
     background-color: rgb(255, 255, 255);
     font-size: 3em;
     z-index: 999;
@@ -62,10 +61,13 @@
         font-size: 200px;
         line-height: 0.7;
         background: $main-gradient;
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 }
+
+/* --- Section Localisation et CTA --- */
 
 #localisation {
     @include top-box-shadow-inset;
@@ -112,7 +114,7 @@
         position: absolute;
         left: 35px;
     }
-    & p {
+    & span {
         font-family: "roboto-regular";
     }
 }
@@ -128,7 +130,6 @@
     border-radius: 20px;
     background-color: $primary-color;
     color: white;
-    font-weight: bold;
 }
 
 /* section restaurants */
@@ -152,9 +153,7 @@
         height: 170px;
     }
     &__text {
-        position: relative;
         padding: 15px 15px;
-        width: fit-content;
     }
 }
 
@@ -166,7 +165,7 @@
     padding: 5px;
     background-color: $tertiary-color;
     color: #269d80;
-    font-family: "roboto-bold";
+    font-family: "roboto-regular";
     text-align: center;
     border-radius: 3px;
 }
@@ -185,14 +184,22 @@
         padding: 20px;
     }
 
+    .howto__nav__button {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 20px;
+        padding: 0;
+        height: 150px;
+    }
+
     .howto__nav i {
-        left: 200px;
+        display: contents;
     }
 
     .number-circle {
-        top: -15px;
-        left: 50%;
-    }
+        position: initial;
+        transform: translateY(-15px);
+    }    
 
     .restaurants-grid {
         display: grid;
@@ -284,8 +291,8 @@
             font-size: xx-large;
         }
         & .number-circle {
-            top: -12px;
-            left: inherit;
+            position: absolute;
+            transform: translate(120.5px, -77px);
         }
     }
 

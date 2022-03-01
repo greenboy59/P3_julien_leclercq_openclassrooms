@@ -1,3 +1,5 @@
+/* --- Section avec fonctionnement et bouton CTA --- */
+
 .call-to-action__btn {
   @include box-shadow;
   display: block;
@@ -26,79 +28,42 @@
   }
 }
 
-/* --- Icone coeur animé --- */
+/* --- Création de l'icone du coeur animé --- */
 
-.container-like-icon {
-  width: 35px;
-  height: 35px;
-  font-family: 'font-awesome 4 Free';
-  @include like-icon-positioning-absolute;
-  @include flex-align-items-center-justify-content-center;
+.fa-heart {
+  @include heart-icon-fill-transition;
+  position: absolute;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  top: 77%;
+  right: 5%;
+  font-family: "font-awesome 4 Free";
   font-size: 28px;
-  overflow: hidden;
-  &::before {
+  &:hover::after {
+    transform: scale(1);
+    transform-origin: bottom;
+    animation: pulse .6s .1s;
+    -moz-animation: pulse .6s .1s;
+  }
+  &::after {
+    @include heart-icon-fill-transition;
+    font-family: 'font-awesome 4 Free';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 28px;
     content: '\f004';
-    display: block;
-    font-weight: 400;
-    &::after {
-      position: absolute;
-      content: '\f004';
-      display: block;
-      color: transparent;
-      background-image: $secondary-gradient;
-      -webkit-background-clip: text;
-      background-clip: text;
-      transform: translateY(100%);
-    }
-    &:hover + ::after {
-      transform: translateY(0);
-    }
+    transform: scale(0);
+    transform-origin: bottom;
+    color: transparent;
+    background-image: $secondary-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
   }
 }
 
-/* --- Test de l'animation via pseudos-éléments - a garder en cas d'échec --- */
-
-// .container-like-icon {
-//   @include like-icon-positioning-absolute;
-//   @include flex-align-items-center-justify-content-center;
-//   width: 35px;
-//   height: 35px;
-//   & .like-icon-solid {
-//     @include like-icon-positioning-absolute;
-//     will-change: transform;
-//     transition: all 0.7s ease;
-//     -moz-transition: all 0.7s ease;
-//     transform-origin: bottom;
-//     -moz-transform-origin: bottom;
-//     transform: scale(0);
-//     -moz-transform: scale(0);
-//     background-image: transparent;
-//     -webkit-background-clip: text;
-//     background-clip: text;
-//     z-index: 3;
-//   }
-//   & .like-icon-regular {
-//     @include like-icon-positioning-absolute;
-//     will-change: transform;
-//     transition: all 0.7s ease;
-//     -moz-transition: all 0.7s ease;
-//     z-index: 2;
-//     &:hover + .like-icon-solid {
-//       animation: pulse 0.6s 0.8s infinite;
-//       color: transparent;
-//       transform: scale(1);
-//       -moz-transform: scale(1);
-//       transform-origin: bottom;
-//       -moz-transform-origin: bottom;
-//       background-image: $secondary-gradient;
-//       -webkit-background-clip: text;
-//       background-clip: text;
-//       z-index: 3;
-//     }
-//   }
-// }
-
-/* --- Bouton des plats avec check pivotant --- */
+  /* --- Création du bouton des plats avec icone check qui execute une rotation --- */
 
 .dishes-btn {
   @include cards-rounded-shadow;
@@ -167,20 +132,6 @@
 
 .like-icon-regular-menu {
   @include like-icon-positioning-menu;
-}
-
-.like-icon-solid-menu {
-  @include like-icon-positioning-menu;
-  opacity: 0;
-  transition: all 1s;
-  &:hover {
-    animation: pulse 0.6s 0.8s infinite;
-    color: transparent;
-    background-image: $secondary-gradient;
-    -webkit-background-clip: text;
-    background-clip: text;
-    opacity: 1;
-  }
 }
 
 .order-btn {

@@ -2,13 +2,20 @@
 /* --- Pulsations de l'icone coeur --- */
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    transform: scale(0);
+    -moz-transform: scale(0);
   }
   30% {
-    transform: scale(1.2);
+    transform: scale(1);
+    -moz-transform: scale(1);
   }
   60% {
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+  }
+  100% {
     transform: scale(1);
+    -moz-transform: scale(1);
   }
 }
 /* --- Loading spinner --- */
@@ -17,7 +24,8 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(100%);
+    transform: translateY(-100%);
+    display: none;
   }
 }
 @-webkit-keyframes bounce {
@@ -190,11 +198,14 @@ h4 {
   font-size: 1.2em;
 }
 
-p {
+h5 {
+  font-family: "roboto-thin";
+}
+
+p, span {
   font-family: "roboto-light";
 }
 
-span,
 a {
   font-family: "roboto-regular";
   font-size: 1em;
@@ -214,6 +225,7 @@ input {
   max-width: 1024px;
 }
 
+/* --- Section avec fonctionnement et bouton CTA --- */
 .call-to-action__btn {
   -webkit-box-shadow: 0 7px 10px -5px #8e8e8e;
   -moz-box-shadow: 0 7px 10px -5px #8e8e8e;
@@ -253,42 +265,43 @@ input {
   color: #9356dc;
 }
 
-/* --- Icone coeur animé --- */
-.container-like-icon {
-  width: 35px;
-  height: 35px;
+/* --- Création de l'icone du coeur animé --- */
+.fa-heart {
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  top: 77%;
+  right: 5%;
+  font-family: "font-awesome 4 Free";
+  font-size: 28px;
+}
+.fa-heart:hover::after {
+  transform: scale(1);
+  transform-origin: bottom;
+  animation: pulse 0.6s 0.1s;
+  -moz-animation: pulse 0.6s 0.1s;
+}
+.fa-heart::after {
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   font-family: "font-awesome 4 Free";
   position: absolute;
-  top: 75%;
-  right: 5%;
+  top: 0;
+  left: 0;
   font-size: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  overflow: hidden;
-}
-.container-like-icon::before {
   content: "\f004";
-  display: block;
-  font-weight: 400;
-}
-.container-like-icon::before::after {
-  position: absolute;
-  content: "\f004";
-  display: block;
+  transform: scale(0);
+  transform-origin: bottom;
   color: transparent;
   background-image: linear-gradient(360deg, #ff79da, #9356dc);
-  -webkit-background-clip: text;
   background-clip: text;
-  transform: translateY(100%);
-}
-.container-like-icon::before:hover + ::after {
-  transform: translateY(0);
+  -webkit-background-clip: text;
 }
 
-/* --- Test de l'animation via pseudos-éléments - a garder en cas d'échec --- */
-/* --- Bouton des plats avec check pivotant --- */
+/* --- Création du bouton des plats avec icone check qui execute une rotation --- */
 .dishes-btn {
   box-shadow: 1px 1px 15px 1px gainsboro;
   border-radius: 15px;
@@ -358,24 +371,6 @@ input {
   width: fit-content;
 }
 
-.like-icon-solid-menu {
-  position: absolute;
-  top: 35px;
-  right: 20px;
-  font-size: 25px;
-  width: fit-content;
-  opacity: 0;
-  transition: all 1s;
-}
-.like-icon-solid-menu:hover {
-  animation: pulse 0.6s 0.8s infinite;
-  color: transparent;
-  background-image: linear-gradient(360deg, #ff79da, #9356dc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  opacity: 1;
-}
-
 .order-btn {
   display: flex;
   align-items: center;
@@ -387,7 +382,8 @@ input {
 }
 
 /* Header */
-header, #logo {
+header,
+#logo {
   margin: 0 auto;
   text-align: center;
   width: 100%;
@@ -441,7 +437,6 @@ footer a:hover {
   width: 100vw;
   text-align: center;
   position: fixed;
-  z-index: 4;
   background-color: white;
   font-size: 3em;
   z-index: 999;
@@ -509,10 +504,12 @@ footer a:hover {
   font-size: 200px;
   line-height: 0.7;
   background: linear-gradient(360deg, #9356dc, #ff79da);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* --- Section Localisation et CTA --- */
 #localisation {
   -moz-box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
   -webkit-box-shadow: inset 0 7px 10px -11px rgba(50, 50, 50, 0.75);
@@ -560,7 +557,7 @@ footer a:hover {
   position: absolute;
   left: 35px;
 }
-.howto__nav p {
+.howto__nav span {
   font-family: "roboto-regular";
 }
 
@@ -576,7 +573,6 @@ footer a:hover {
   border-radius: 20px;
   background-color: #9356dc;
   color: white;
-  font-weight: bold;
 }
 
 /* section restaurants */
@@ -602,9 +598,7 @@ footer a:hover {
   height: 170px;
 }
 .restaurants__card__text {
-  position: relative;
   padding: 15px 15px;
-  width: fit-content;
 }
 
 .new-label {
@@ -615,7 +609,7 @@ footer a:hover {
   padding: 5px;
   background-color: #99e2d0;
   color: #269d80;
-  font-family: "roboto-bold";
+  font-family: "roboto-regular";
   text-align: center;
   border-radius: 3px;
 }
@@ -631,13 +625,21 @@ footer a:hover {
     padding: 20px;
   }
 
+  .howto__nav__button {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0;
+    height: 150px;
+  }
+
   .howto__nav i {
-    left: 200px;
+    display: contents;
   }
 
   .number-circle {
-    top: -15px;
-    left: 50%;
+    position: initial;
+    transform: translateY(-15px);
   }
 
   .restaurants-grid {
@@ -729,8 +731,8 @@ footer a:hover {
     font-size: xx-large;
   }
   .howto__nav .number-circle {
-    top: -12px;
-    left: inherit;
+    position: absolute;
+    transform: translate(120.5px, -77px);
   }
 
   .footer-links,
