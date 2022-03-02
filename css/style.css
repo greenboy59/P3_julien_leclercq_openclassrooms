@@ -439,54 +439,48 @@ footer a:hover {
   position: fixed;
   background-color: white;
   font-size: 3em;
-  z-index: 999;
+  z-index: 5;
 }
 .container-loader strong {
   font-family: "roboto-thin";
 }
-.container-loader > p {
+.container-loader > span {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: -100px;
+  transform: translate(-50%, 390px);
   font-family: "shrikhand";
 }
 
-.container-loader__food-line,
-.container-loader__food-line-top-reverse {
-  position: absolute;
+.container-loader__food-line, .container-loader__food-line-top-reverse {
   display: flex;
-  align-items: center;
+  white-space: nowrap;
+  position: absolute;
   height: 60px;
-  overflow: hidden;
   bottom: 25px;
 }
-.container-loader__food-line i,
-.container-loader__food-line-top-reverse i {
-  width: fit-content;
+.container-loader__food-line::after, .container-loader__food-line-top-reverse::after {
+  content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
+  font-family: "font-awesome 4 Free";
+  animation: food-fiesta 10s linear infinite;
   color: #99e2d0;
   font-size: 0.7em;
+  letter-spacing: 3rem;
 }
-.container-loader__food-line .food-fiesta,
-.container-loader__food-line-top-reverse .food-fiesta {
-  white-space: nowrap;
+.container-loader__food-line::before, .container-loader__food-line-top-reverse::before {
+  content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
+  font-family: "font-awesome 4 Free";
   animation: food-fiesta 10s linear infinite;
-}
-.container-loader__food-line .food-fiesta .line-2,
-.container-loader__food-line-top-reverse .food-fiesta .line-2 {
-  text-align: start;
-}
-.container-loader__food-line .food-fiesta .fa-utensils, .container-loader__food-line .food-fiesta .fa-handshake-angle,
-.container-loader__food-line-top-reverse .food-fiesta .fa-utensils,
-.container-loader__food-line-top-reverse .food-fiesta .fa-handshake-angle {
-  margin-right: 10px;
+  color: #99e2d0;
+  font-size: 0.7em;
+  letter-spacing: 3rem;
 }
 
 .container-loader__food-line-top-reverse {
   top: 15px;
 }
-.container-loader__food-line-top-reverse .food-fiesta {
+.container-loader__food-line-top-reverse::before {
+  animation-direction: reverse;
+}
+.container-loader__food-line-top-reverse::after {
   animation-direction: reverse;
 }
 
@@ -496,15 +490,17 @@ footer a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: 70px;
   font-size: 0.3em;
 }
-.loader-subtitle .bounce-points {
+.loader-subtitle::after {
+  content: "...";
+  display: inline-block;
+  position: absolute;
+  right: 20%;
   animation: 1s ease-in-out infinite bounce;
-  font-size: 200px;
-  line-height: 0.7;
+  font-size: 12em;
+  font-weight: 700;
   background: linear-gradient(360deg, #9356dc, #ff79da);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -555,7 +551,7 @@ footer a:hover {
   font-size: 1.2em;
   width: 35px;
   position: absolute;
-  left: 35px;
+  left: 10%;
 }
 .howto__nav span {
   font-family: "roboto-regular";
@@ -732,7 +728,8 @@ footer a:hover {
   }
   .howto__nav .number-circle {
     position: absolute;
-    transform: translate(120.5px, -77px);
+    -moz-transform: translate(120.5px, -77px);
+    transform: translate(435%, -285%);
   }
 
   .footer-links,

@@ -8,45 +8,38 @@
     position: fixed;
     background-color: rgb(255, 255, 255);
     font-size: 3em;
-    z-index: 999;
+    z-index: 5;
     & strong {
         font-family: "roboto-thin";
     }
-    & > p {
-        @include position-absolute-center;
-        margin-top: -100px;
+    & > span {
+        position: absolute;
+        transform: translate(-50%, 390px);
         font-family: "shrikhand";
     }
 }
 
-.container-loader__food-line,
-.container-loader__food-line-top-reverse {
-    position: absolute;
+.container-loader__food-line {
     display: flex;
-    align-items: center;
+    white-space: nowrap;
+    position: absolute;
     height: 60px;
-    overflow: hidden;
     bottom: 25px;
-    & i {
-        width: fit-content;
-        color: $tertiary-color;
-        font-size: 0.7em;
+    &::after {
+    @include moving-icons-loader-properties;
     }
-    & .food-fiesta {
-        white-space: nowrap;
-        animation: food-fiesta 10s linear infinite;
-        & .line-2 {
-            text-align: start;
-        }
-        & .fa-utensils {
-            margin-right: 10px;
-        }
+    &::before {
+    @include moving-icons-loader-properties;
     }
 }
 
 .container-loader__food-line-top-reverse {
+    @extend .container-loader__food-line;
     top: 15px;
-    & .food-fiesta {
+    &::before {
+        animation-direction: reverse;
+    }
+    &::after {
         animation-direction: reverse;
     }
 }
@@ -54,14 +47,16 @@
 .loader-subtitle {
     font-family: "roboto-thin";
     @include position-absolute-center;
-    margin-top: 70px;
     font-size: 0.3em;
-    & .bounce-points {
+    &::after {
+        content: '...';
+        display: inline-block;
+        position: absolute;
+        right: 20%;
         animation: 1s ease-in-out infinite bounce;
-        font-size: 200px;
-        line-height: 0.7;
+        font-size: 12em;
+        font-weight: 700;
         background: $main-gradient;
-        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -112,7 +107,7 @@
         font-size: 1.2em;
         width: 35px;
         position: absolute;
-        left: 35px;
+        left: 10%;
     }
     & span {
         font-family: "roboto-regular";
@@ -199,7 +194,7 @@
     .number-circle {
         position: initial;
         transform: translateY(-15px);
-    }    
+    }
 
     .restaurants-grid {
         display: grid;
@@ -292,7 +287,8 @@
         }
         & .number-circle {
             position: absolute;
-            transform: translate(120.5px, -77px);
+            -moz-transform: translate(120.5px, -77px);
+            transform: translate(435%, -285%);
         }
     }
 
