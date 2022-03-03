@@ -20,7 +20,6 @@
   display: flex;
   align-items: center;
   height: 70px;
-  padding-left: 80px;
   background-color: whitesmoke;
   transition: all 0.8s;
   &:hover {
@@ -37,7 +36,7 @@
   width: 28px;
   height: 28px;
   top: 77%;
-  right: 5%;
+  right: 20px;
   font-family: "font-awesome 4 Free";
   font-size: 28px;
   &:hover::after {
@@ -50,9 +49,7 @@
     @include heart-icon-fill-transition;
     font-family: 'font-awesome 4 Free';
     position: absolute;
-    top: 0;
     left: 0;
-    font-size: 28px;
     content: '\f004';
     transform: scale(0);
     transform-origin: bottom;
@@ -82,17 +79,17 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 18%;
+    width: 4.4em;
     height: 100%;
     background-color: $tertiary-color;
     transform: translateX(100%);
     transition: $main-transition-all-5s-ease-out;
   }
-  /* --- Pseudo élément pour l'icone check --- */
+
+  /* --- Pseudos éléments pour l'icone check --- */
 
   &::before {
     content: "\f058";
-    visibility: hidden;
     position: absolute;
     font-family: "font-awesome 4 Free";
     right: 0;
@@ -104,16 +101,15 @@
     transition: all 0.4s linear;
   }
   &:hover {
-    padding-right: 60px;
+    padding-right: 4.4em;
     &::after {
       background-color: $tertiary-color;
-      width: 18%;
+      width: 4.4em;
       transform: translateX(0%);
       transition: $main-transition-all-5s-ease-out;
     }
     &::before {
       transform: translate(-70%) rotate(1turn);
-      visibility: visible;
       transition: $main-transition-all-5s-ease-out;
       z-index: 2;
     }
@@ -128,16 +124,26 @@
   }
 }
 
-/* --- Régles des boutons pour les pages menus --- */
-
-.like-icon-regular-menu {
-  @include like-icon-positioning-menu;
-}
-
 .order-btn {
   @include flex-align-items-center-justify-content-center;
   & .call-to-action__btn {
     padding: 15px 50px;
     margin: 0 0 40px 0;
   }
+}
+
+ /* --- Régles spécifiques au desktop --- */
+
+@media only screen and (min-width: 900px) {
+
+.dishes-btn {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  &::before {
+    top: 30%;
+  }
+}
 }

@@ -1,307 +1,318 @@
 /* --- Loader --- */
 
 .container-loader {
-    animation: loading-disappear 3s forwards;
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
-    position: fixed;
-    background-color: rgb(255, 255, 255);
-    font-size: 3em;
-    z-index: 5;
-    & strong {
-        font-family: "roboto-thin";
-    }
-    & > span {
-        position: absolute;
-        transform: translate(-50%, 390px);
-        font-family: "shrikhand";
-    }
+  animation: loading-disappear 3s forwards;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  font-size: 3em;
+  z-index: 5;
+  & strong {
+    font-family: "roboto-thin";
+  }
+  & > span {
+    font-family: "shrikhand";
+  }
 }
 
 .container-loader__food-line {
-    display: flex;
-    white-space: nowrap;
-    position: absolute;
-    height: 60px;
-    bottom: 25px;
-    &::after {
+  display: flex;
+  white-space: nowrap;
+  position: absolute;
+  height: 60px;
+  bottom: 25px;
+  &::after {
     @include moving-icons-loader-properties;
-    }
-    &::before {
+  }
+  &::before {
     @include moving-icons-loader-properties;
-    }
+  }
 }
 
 .container-loader__food-line-top-reverse {
-    @extend .container-loader__food-line;
-    top: 15px;
-    &::before {
-        animation-direction: reverse;
-    }
-    &::after {
-        animation-direction: reverse;
-    }
+  @extend .container-loader__food-line;
+  top: 15px;
+  &::before {
+    animation-direction: reverse;
+  }
+  &::after {
+    animation-direction: reverse;
+  }
 }
 
 .loader-subtitle {
-    font-family: "roboto-thin";
-    @include position-absolute-center;
-    font-size: 0.3em;
-    &::after {
-        content: '...';
-        display: inline-block;
-        position: absolute;
-        right: 20%;
-        animation: 1s ease-in-out infinite bounce;
-        font-size: 12em;
-        font-weight: 700;
-        background: $main-gradient;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+  font-family: "roboto-thin";
+  font-size: 0.3em;
+  &::after {
+    content: "🔪";
+    background-color: $main-gradient;
+    background-image: $main-gradient;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: block;
+    margin-top: 150px;
+    animation: 1s bounce ease-in-out infinite;
+    -moz-animation: 1s bounce ease-in-out infinite;
+    -webkit-animation: 1s bounce ease-in-out infinite;
+    font-weight: 900;
+    font-size: 3em;
+  }
+  & strong {
+    line-height: 3em;
+  }
 }
 
 /* --- Section Localisation et CTA --- */
 
 #localisation {
-    @include top-box-shadow-inset;
-    padding: 15px 0;
-    background-color: #eaeaea;
-    color: #353535;
-    font-weight: 600;
-    font-size: 1em;
-    & i {
-        padding-right: 20px;
-    }
+  @include top-box-shadow-inset;
+  padding: 15px 0;
+  background-color: #eaeaea;
+  color: #353535;
+  font-weight: 600;
+  font-size: 1em;
+  & i {
+    padding-right: 20px;
+  }
 }
 
 .call-to-action {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: whitesmoke;
 }
 
 /* Section, fonctionnement */
 
 .howto__container {
-    background-color: white;
-    padding: 20px 20px 20px 32px;
+  background-color: white;
+  padding: 20px 20px 20px 32px;
 }
 
 .fas {
-    display: inline-block;
-    text-align: center;
+  display: inline-block;
+  text-align: center;
 }
 
 .howto__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 40px;
-    & i {
-        color: #7e7e7e;
-        font-size: 1.2em;
-        width: 35px;
-        position: absolute;
-        left: 10%;
-    }
-    & span {
-        font-family: "roboto-regular";
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+  & i {
+    color: #7e7e7e;
+    font-size: 1.2em;
+    margin: 0 1em 0 2em;
+    width: 25px;
+  }
+  & :nth-child(3) {
+    font-family: "roboto-regular";
+  }
 }
 
 /* Création de la petite pastille avec les nombres */
 
 .number-circle {
-    @include flex-align-items-center-justify-content-center;
-    position: absolute;
-    left: -12px;
-    width: 27px;
-    height: 27px;
-    border-radius: 20px;
-    background-color: $primary-color;
-    color: white;
+  @include flex-align-items-center-justify-content-center;
+  position: absolute;
+  left: -12px;
+  width: 27px;
+  height: 27px;
+  border-radius: 20px;
+  background-color: $primary-color;
+  color: white;
 }
 
 /* section restaurants */
 
 .restaurants {
-    padding: 20px;
-    background-color: whitesmoke;
+  padding: 20px;
+  background-color: whitesmoke;
 }
 
 .restaurants__card {
-    @include cards-rounded-shadow;
-    position: relative;
-    margin-bottom: 20px;
-    transition: all 400ms;
-    cursor: pointer;
-    &:hover {
-        @include cards-rounded-shadow-hover;
-    }
-    & img {
-        border-radius: 15px 15px 0 0;
-        height: 170px;
-    }
-    &__text {
-        padding: 15px 15px;
-    }
+  @include cards-rounded-shadow;
+  position: relative;
+  margin-bottom: 20px;
+  transition: all 400ms;
+  &::before {
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    content: '';
+    @include cards-rounded-shadow-hover;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+  & img {
+    border-radius: 15px 15px 0 0;
+    height: 170px;
+  }
+  &__text {
+    padding: 15px 15px;
+  }
 }
 
 .new-label {
-    position: absolute;
-    width: 90px;
-    top: 15px;
-    right: 15px;
-    padding: 5px;
-    background-color: $tertiary-color;
-    color: #269d80;
-    font-family: "roboto-regular";
-    text-align: center;
-    border-radius: 3px;
+  position: absolute;
+  width: 90px;
+  top: 15px;
+  right: 15px;
+  padding: 5px;
+  background-color: $tertiary-color;
+  color: #269d80;
+  font-family: "roboto-regular";
+  text-align: center;
+  border-radius: 3px;
 }
 
 /* Nouvelles règles pour les tablettes */
 
 @media only screen and (min-width: 768px) {
-    .container-loader__food-line,
-    .container-loader__food-line-top-reverse {
-        & i {
-            width: 80px;
-        }
+  .container-loader__food-line,
+  .container-loader__food-line-top-reverse {
+    & i {
+      width: 80px;
     }
+  }
 
-    .howto__container {
-        padding: 20px;
-    }
+  .howto__container {
+    padding: 20px;
+  }
 
-    .howto__nav__button {
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 20px;
-        padding: 0;
-        height: 150px;
-    }
+  .howto__nav__button {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 0;
+    height: 150px;
+  }
 
-    .howto__nav i {
-        display: contents;
-    }
+  .howto__nav i {
+    display: contents;
+  }
 
-    .number-circle {
-        position: initial;
-        transform: translateY(-15px);
-    }
+  .number-circle {
+    position: initial;
+    transform: translateY(-15px);
+  }
 
-    .restaurants-grid {
-        display: grid;
-        justify-content: space-between;
-        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
-    }
+  .restaurants-grid {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+  }
 
-    .footer-links {
-        flex-direction: row;
-        gap: 30px;
-    }
-    .legal-notice,
-    .contact {
-        margin-left: 30px;
-    }
+  .footer-links {
+    flex-direction: row;
+    gap: 30px;
+  }
+  .legal-notice,
+  .contact {
+    margin-left: 30px;
+  }
 }
 
 /* Nouvelles règles pour le desktop */
 
 @media screen and (min-width: 900px) {
-    .container-loader__food-line,
-    .container-loader__food-line-top-reverse {
-        & i {
-            width: 250px;
-        }
+  .container-loader__food-line,
+  .container-loader__food-line-top-reverse {
+    & i {
+      width: 250px;
     }
+  }
 
-    #wrapper {
-        max-width: unset;
-        min-width: 100vw;
-        display: flex;
-        flex-direction: column;
-    }
+  #wrapper {
+    max-width: unset;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
 
-    #logo {
-        padding: 40px 0;
-        & img {
-            width: 20vw;
-        }
+  #logo {
+    padding: 40px 0;
+    & img {
+      width: 20vw;
     }
+  }
 
-    #localisation {
-        padding: 40px 0;
-        font-size: 1.5em;
-    }
+  #localisation {
+    padding: 40px 0;
+    font-size: 1.5em;
+  }
 
-    .call-to-action {
-        background-color: white;
-        padding: 50px 0 0 0;
-    }
+  .call-to-action {
+    background-color: white;
+    padding: 50px 0 0 0;
+  }
 
-    main {
-        max-width: 1080px;
-        width: 100%;
-        padding: 40px 20px 60px 20px;
-        display: flex;
-        align-self: center;
-        gap: 20px;
-        & #howto {
-            width: calc(30% - 15px);
-        }
-        & .restaurants {
-            width: calc(70% - 15px);
-        }
+  main {
+    max-width: 1080px;
+    width: 100%;
+    padding: 40px 20px 60px 20px;
+    display: flex;
+    align-self: center;
+    gap: 20px;
+    & #howto {
+      width: calc(30% - 15px);
     }
+    & .restaurants {
+      width: calc(70% - 15px);
+    }
+  }
 
-    .howto__container,
-    .restaurants {
-        background-color: whitesmoke;
-        border-radius: 18px;
-        & img {
-            height: 170px;
-        }
+  .howto__container,
+  .restaurants {
+    background-color: whitesmoke;
+    border-radius: 18px;
+    & img {
+      height: 170px;
     }
+  }
 
-    .howto__nav {
-        margin-bottom: 0;
-        &__button {
-            flex-direction: column;
-            justify-content: space-around;
-            height: 155px;
-            padding: 30px;
-            text-align: center;
-        }
-        & i {
-            margin: 15px 0;
-            position: inherit;
-            left: inherit;
-            font-size: xx-large;
-        }
-        & .number-circle {
-            position: absolute;
-            -moz-transform: translate(120.5px, -77px);
-            transform: translate(435%, -285%);
-        }
+  .howto__nav {
+    margin-bottom: 0;
+    &__button {
+      flex-direction: column;
+      justify-content: space-around;
+      height: 155px;
+      padding: 30px;
     }
+    & i {
+      margin: 15px 0;
+      font-size: xx-large;
+    }
+    & .number-circle {
+      position: absolute;
+      transform: none;
+      top: -12px;
+    }
+  }
 
-    .footer-links,
-    footer h4 {
-        max-width: 1080px;
-        padding: 25px 25px;
-        justify-content: space-between;
-        margin: 0 auto;
-    }
+  .footer-links,
+  footer h4 {
+    max-width: 1080px;
+    padding: 25px 25px;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
 
-    .footer h4 {
-        padding: 0;
-        font-size: 2em;
-    }
+  .footer h4 {
+    padding: 0;
+    font-size: 2em;
+  }
 }
