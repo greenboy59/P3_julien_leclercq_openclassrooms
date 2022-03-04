@@ -494,18 +494,18 @@ footer a:hover {
 .container-loader__food-line::after, .container-loader__food-line-top-reverse::after {
   content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
   font-family: "font-awesome 4 Free";
-  animation: food-fiesta 10s linear infinite;
+  animation: food-fiesta 20s linear infinite;
   color: #99e2d0;
   font-size: 0.7em;
-  letter-spacing: 3rem;
+  letter-spacing: 4rem;
 }
 .container-loader__food-line::before, .container-loader__food-line-top-reverse::before {
   content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
   font-family: "font-awesome 4 Free";
-  animation: food-fiesta 10s linear infinite;
+  animation: food-fiesta 20s linear infinite;
   color: #99e2d0;
   font-size: 0.7em;
-  letter-spacing: 3rem;
+  letter-spacing: 4rem;
 }
 
 .container-loader__food-line-top-reverse {
@@ -524,9 +524,7 @@ footer a:hover {
 }
 .loader-subtitle::after {
   content: "🔪";
-  margin-top: 50px;
-  background-color: linear-gradient(360deg, #9356dc, #ff79da);
-  background-image: linear-gradient(360deg, #9356dc, #ff79da);
+  background: linear-gradient(360deg, #9356dc, #ff79da);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -539,6 +537,7 @@ footer a:hover {
   -webkit-animation: 1s bounce ease infinite;
   font-weight: 900;
   font-size: 4em;
+  margin-top: 50px;
 }
 .loader-subtitle strong {
   line-height: 3em;
