@@ -18,21 +18,21 @@
 
 @mixin cards-rounded-shadow-hover {
     box-shadow: 1px 1px 15px 1px $primary-color;
+    border-radius: 15px;
 }
 
 @mixin btn-hover {
     opacity: 0.8;
     box-shadow: 0 1px 12px 1px $primary-color;
-    background: rgba(147, 86, 220, 0.2);
-    & i {
-        color: $primary-color;
-    }
+    background: rgba(147, 86, 220, 0.1);
+    border-radius: 15px;
 }
 
 @mixin btn-hover-gradient {
     background: $hover-gradient;
-    box-shadow: 1px 1px 12px 1px $primary-color;
+    box-shadow: 1px 1px 4px 1px $primary-color;
     text-shadow: 1px 1px 0 $primary-color;
+    border-radius: 25px;
 }
 
 @mixin flex-align-items-center-justify-content-center {

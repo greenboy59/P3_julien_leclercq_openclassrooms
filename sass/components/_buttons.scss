@@ -1,17 +1,31 @@
-/* --- Section avec fonctionnement et bouton CTA --- */
+/* --- Section - fonctionnement et bouton CTA --- */
 
 .call-to-action__btn {
   @include box-shadow;
   display: block;
+  position: relative;
   padding: 13px 15px;
   margin: 25px 0;
   width: fit-content;
   border-radius: 25px;
   color: white;
   background: $main-gradient;
-  transition: box-shadow 0.8s, text-shadow 0.5s;
-  &:hover {
+  z-index: 1;
+  &:hover::after {
+    opacity: 1;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: brightness(105%);
     @include btn-hover-gradient;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
   }
 }
 
@@ -22,8 +36,26 @@
   height: 70px;
   background-color: whitesmoke;
   transition: all 0.8s;
+  z-index: 1;
   &:hover {
+    & > i {
+      color: $primary-color;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     @include btn-hover;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
   }
 }
 
@@ -39,32 +71,39 @@
   right: 20px;
   font-family: "font-awesome 4 Free";
   font-size: 28px;
+  z-index: 1;
   &:hover::after {
     transform: scale(1);
     transform-origin: bottom;
-    animation: pulse .6s .1s;
-    -moz-animation: pulse .6s .1s;
+    animation: pulse 0.6s 0.1s;
+    -moz-animation: pulse 0.6s 0.1s;
+    z-index: 1;
   }
   &::after {
     @include heart-icon-fill-transition;
-    font-family: 'font-awesome 4 Free';
+    font-family: "font-awesome 4 Free";
     position: absolute;
     left: 0;
-    content: '\f004';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    content: "\f004";
     transform: scale(0);
     transform-origin: bottom;
     color: transparent;
     background-image: $secondary-gradient;
     background-clip: text;
     -webkit-background-clip: text;
+    -moz-background-clip: text;
   }
 }
 
-  /* --- Création du bouton des plats avec icone check qui execute une rotation --- */
+/* --- Création du bouton des plats avec icone check qui execute une rotation --- */
 
 .dishes-btn {
   @include cards-rounded-shadow;
-  position: relative;
+  text-overflow: ellipsis;
   font-size: 0.9em;
   padding: 10px;
   height: 70px;
@@ -98,20 +137,15 @@
     transform: translateX(100%) rotate(90deg);
     color: white;
     z-index: 2;
-    transition: all 0.4s linear;
+    transition: $main-transition-all-5s-ease-out;
   }
   &:hover {
     padding-right: 4.4em;
     &::after {
-      background-color: $tertiary-color;
-      width: 4.4em;
       transform: translateX(0%);
-      transition: $main-transition-all-5s-ease-out;
     }
     &::before {
       transform: translate(-70%) rotate(1turn);
-      transition: $main-transition-all-5s-ease-out;
-      z-index: 2;
     }
   }
 }
@@ -132,18 +166,17 @@
   }
 }
 
- /* --- Régles spécifiques au desktop --- */
+/* --- Régles spécifiques au desktop --- */
 
 @media only screen and (min-width: 900px) {
-
-.dishes-btn {
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  &::before {
-    top: 30%;
+  .dishes-btn {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    &::before {
+      top: 30%;
+    }
   }
-}
 }

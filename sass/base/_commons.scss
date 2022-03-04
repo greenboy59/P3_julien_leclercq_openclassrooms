@@ -57,6 +57,9 @@ h2 {
 h3 {
   font-family: "roboto-bold";
   font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 h4 {
@@ -76,7 +79,6 @@ a {
   font-family: "roboto-regular";
   font-size: 1em;
   cursor: pointer;
-  text-overflow: ellipsis;
 }
 
 button,
