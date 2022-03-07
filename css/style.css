@@ -328,7 +328,9 @@ input {
   line-height: 1em;
   cursor: pointer;
 }
-.btn-like:hover::before, .btn-like :focus::before, .btn-like :active::before {
+.btn-like:hover::before,
+.btn-like :focus::before,
+.btn-like :active::before {
   animation: pulse ease-out 0.5s forwards;
   -moz-animation: pulse ease-out 0.5s forwards;
   visibility: visible;
@@ -366,15 +368,13 @@ input {
 .dishes-btn::after {
   content: "";
   position: absolute;
-  display: block;
-  border-radius: 0 15px 15px 0;
   top: 0;
   right: 0;
-  width: 4.4em;
   height: 100%;
-  visibility: hidden;
-  background-color: #99e2d0;
+  width: 4.4em;
   transform: translateX(100%);
+  -webkit-box-shadow: inset -65px 0px 0px 0px #99e2d0;
+  box-shadow: inset -65px 0px 0px 0px #99e2d0;
   transition: all 0.5s ease-out;
 }
 .dishes-btn::before {
@@ -385,19 +385,27 @@ input {
   top: 25%;
   font-size: 25px;
   transform: translateX(100%) rotate(90deg);
+  -moz-transform: translateX(100%) rotate(90deg);
+  -webkit-transform: translateX(100%) rotate(90deg);
   color: white;
   z-index: 2;
   transition: all 0.5s ease-out;
 }
-.dishes-btn:hover, .dishes-btn :focus {
+.dishes-btn:hover,
+.dishes-btn :focus {
   padding-right: 4.4em;
 }
-.dishes-btn:hover::after, .dishes-btn :focus::after, .dishes-btn :active::after {
+.dishes-btn:hover::after,
+.dishes-btn :focus::after {
   transform: translateX(0%);
-  visibility: visible;
+  -moz-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
 }
-.dishes-btn:hover::before, .dishes-btn :focus::before, .dishes-btn :active::before {
+.dishes-btn:hover::before,
+.dishes-btn :focus::before {
   transform: translate(-70%) rotate(1turn);
+  -moz-transform: translate(-70%) rotate(1turn);
+  -webkit-transform: translate(-70%) rotate(1turn);
 }
 
 /* --- Régles sécifiques aux tablettes --- */
