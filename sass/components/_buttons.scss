@@ -123,13 +123,13 @@
   }
   &:hover,:focus,:active {
     padding-right: 4.4em;
-    &::after {
+  }
+  &:hover::after,:focus::after,:active::after {
       transform: translateX(0%);
       visibility: visible;
-    }
-    &::before {
-      transform: translate(-70%) rotate(1turn);
-    }
+  }
+  &:hover::before,:focus::before,:active::before {
+    transform: translate(-70%) rotate(1turn);
   }
 }
 
