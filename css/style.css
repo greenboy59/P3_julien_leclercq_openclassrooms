@@ -328,7 +328,7 @@ input {
   line-height: 1em;
   cursor: pointer;
 }
-.btn-like:focus::before {
+.btn-like:hover::before, .btn-like :focus::before, .btn-like :active::before {
   animation: pulse ease-out 0.5s forwards;
   -moz-animation: pulse ease-out 0.5s forwards;
   visibility: visible;
@@ -388,14 +388,14 @@ input {
   z-index: 2;
   transition: all 0.5s ease-out;
 }
-.dishes-btn:hover {
+.dishes-btn:hover, .dishes-btn :focus, .dishes-btn :active {
   padding-right: 4.4em;
 }
-.dishes-btn:hover::after {
+.dishes-btn:hover::after, .dishes-btn :focus::after, .dishes-btn :active::after {
   transform: translateX(0%);
   visibility: visible;
 }
-.dishes-btn:hover::before {
+.dishes-btn:hover::before, .dishes-btn :focus::before, .dishes-btn :active::before {
   transform: translate(-70%) rotate(1turn);
 }
 

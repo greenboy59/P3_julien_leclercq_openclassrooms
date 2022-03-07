@@ -62,7 +62,7 @@
   top: 190px;
   line-height: 1em;
   cursor: pointer;
-  &:focus::before {
+  &:hover::before,:focus::before,:active::before {
     animation: pulse ease-out 0.5s forwards;
     -moz-animation: pulse ease-out 0.5s forwards;
     visibility: visible;
@@ -121,7 +121,7 @@
     z-index: 2;
     transition: $main-transition-all-5s-ease-out;
   }
-  &:hover {
+  &:hover,:focus,:active {
     padding-right: 4.4em;
     &::after {
       transform: translateX(0%);
