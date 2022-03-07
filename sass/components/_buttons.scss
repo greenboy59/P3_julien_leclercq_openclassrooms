@@ -11,9 +11,11 @@
   color: white;
   background: $main-gradient;
   z-index: 1;
+
   &:hover::after {
     opacity: 1;
   }
+
   &::after {
     content: "";
     @include absolute-positioning-zero-axis;
@@ -33,14 +35,18 @@
   background-color: whitesmoke;
   transition: all 0.8s;
   z-index: 1;
+
   &:hover {
+
     & > i {
       color: $primary-color;
     }
+
     &::after {
       opacity: 1;
     }
   }
+
   &::after {
     content: "";
     @include absolute-positioning-zero-axis;
@@ -62,11 +68,13 @@
   top: 190px;
   line-height: 1em;
   cursor: pointer;
+
   &:hover::before,:focus::before,:active::before {
     animation: pulse ease-out 0.5s forwards;
     -moz-animation: pulse ease-out 0.5s forwards;
     visibility: visible;
   }
+
   &::before {
     @include absolute-positioning-zero-axis;
     visibility: hidden;
@@ -97,6 +105,7 @@
     content: "";
     position: absolute;
     display: block;
+    border-radius: 0 15px 15px 0;
     top: 0;
     right: 0;
     width: 4.4em;
@@ -121,13 +130,16 @@
     z-index: 2;
     transition: $main-transition-all-5s-ease-out;
   }
-  &:hover,:focus,:active {
+
+  &:hover,:focus {
     padding-right: 4.4em;
   }
+
   &:hover::after,:focus::after,:active::after {
       transform: translateX(0%);
       visibility: visible;
   }
+
   &:hover::before,:focus::before,:active::before {
     transform: translate(-70%) rotate(1turn);
   }
@@ -143,6 +155,7 @@
 
 .order-btn {
   @include flex-align-items-center-justify-content-center;
+
   & .call-to-action__btn {
     padding: 15px 50px;
     margin: 0 0 40px 0;
@@ -158,6 +171,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    
     &::before {
       top: 30%;
     }

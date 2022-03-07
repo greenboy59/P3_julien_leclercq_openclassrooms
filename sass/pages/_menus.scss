@@ -6,6 +6,7 @@
     font-family: "shrikhand", Sans-serif;
     padding-top: 35px;
   }
+
   & .btn-like {
     margin-right: 15px;
     top: 35px;
@@ -16,6 +17,7 @@
   position: relative;
   background-color: white;
   padding: 0;
+
   & i {
     font-size: 1.5em;
   }
@@ -41,17 +43,21 @@ main {
   border-radius: 40px 40px 0 0;
   background-color: whitesmoke;
   margin-top: -3em;
+
   & h2 {
     padding: 7px 0;
   }
+
   & .entries {
     animation: dishes-appearance 1s ease-out;
     animation-duration: 1s;
   }
+
   & .dishes {
     animation: dishes-appearance 1s ease-out;
     animation-duration: 1.5s;
   }
+
   & .desserts {
     animation: dishes-appearance 1s ease-out;
     animation-duration: 2s;
@@ -63,6 +69,7 @@ main {
   position: relative;
   display: inline-block;
   font-family: "roboto-thin", Sans-serif;
+
   &::before {
     content: "";
     border-bottom: 4px solid $tertiary-color;
@@ -84,10 +91,12 @@ main {
 .dishes-details-price {
   display: flex;
   justify-content: space-between;
+
   & strong {
     font-family: "roboto-medium", Sans-serif;
     padding: 10px;
   }
+
   & .text-overflow-ellipsis {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -99,7 +108,7 @@ main {
 
 @media only screen and (min-width: 768px) {
   .hero-image img {
-    height: 600px;
+    height: 300px;
   }
 
   .container-menus {

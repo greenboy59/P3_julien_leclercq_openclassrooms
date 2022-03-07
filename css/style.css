@@ -367,6 +367,7 @@ input {
   content: "";
   position: absolute;
   display: block;
+  border-radius: 0 15px 15px 0;
   top: 0;
   right: 0;
   width: 4.4em;
@@ -388,7 +389,7 @@ input {
   z-index: 2;
   transition: all 0.5s ease-out;
 }
-.dishes-btn:hover, .dishes-btn :focus, .dishes-btn :active {
+.dishes-btn:hover, .dishes-btn :focus {
   padding-right: 4.4em;
 }
 .dishes-btn:hover::after, .dishes-btn :focus::after, .dishes-btn :active::after {
@@ -505,15 +506,7 @@ footer a:hover {
   height: 60px;
   bottom: 15px;
 }
-.container-loader__food-line::after, .container-loader__food-line-top-reverse::after {
-  content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
-  font-family: "font-awesome 4 Free";
-  animation: food-line-translate 20s linear infinite;
-  color: #99e2d0;
-  font-size: 0.7em;
-  letter-spacing: 4rem;
-}
-.container-loader__food-line::before, .container-loader__food-line-top-reverse::before {
+.container-loader__food-line::after, .container-loader__food-line-top-reverse::after, .container-loader__food-line::before, .container-loader__food-line-top-reverse::before {
   content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
   font-family: "font-awesome 4 Free";
   animation: food-line-translate 20s linear infinite;
@@ -904,7 +897,7 @@ main {
 /* --- Nouvelles règles pour les tablettes --- */
 @media only screen and (min-width: 768px) {
   .hero-image img {
-    height: 600px;
+    height: 300px;
   }
 
   .container-menus {

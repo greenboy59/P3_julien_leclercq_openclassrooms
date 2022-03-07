@@ -12,9 +12,11 @@
   background-color: rgb(255, 255, 255);
   font-size: 3em;
   z-index: 5;
+
   & strong {
     font-family: "roboto-thin", Sans-serif;
   }
+
   & > span {
     font-family: "shrikhand", Sans-serif;
   }
@@ -26,20 +28,26 @@
   position: absolute;
   height: 60px;
   bottom: 15px;
-  &::after {
-    @include moving-icons-loader-properties;
-  }
+
+  &::after,
   &::before {
-    @include moving-icons-loader-properties;
+    content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
+    font-family: "font-awesome 4 Free";
+    animation: food-line-translate 20s linear infinite;
+    color: $tertiary-color;
+    font-size: 0.7em;
+    letter-spacing: 4rem;
   }
 }
 
 .container-loader__food-line-top-reverse {
   @extend .container-loader__food-line;
   top: 15px;
+
   &::before {
     animation-direction: reverse;
   }
+
   &::after {
     animation-direction: reverse;
   }
@@ -48,6 +56,7 @@
 .loader-subtitle {
   font-family: "roboto-thin", Sans-serif;
   font-size: 0.3em;
+
   &::after {
     content: "🔪";
     background: $main-gradient;
@@ -63,6 +72,7 @@
     font-size: 4em;
     margin-top: 50px;
   }
+
   & strong {
     line-height: 3em;
   }
@@ -77,6 +87,7 @@
   color: #353535;
   font-weight: 600;
   font-size: 1em;
+
   & i {
     padding-right: 20px;
   }
@@ -108,12 +119,14 @@
   flex-direction: column;
   gap: 30px;
   margin-bottom: 40px;
+
   & i {
     color: #7e7e7e;
     font-size: 1.2em;
     margin: 0 1em 0 2em;
     width: 25px;
   }
+
   & :nth-child(3) {
     font-family: "roboto-regular", Sans-serif;
   }
@@ -145,9 +158,11 @@
   margin-bottom: 20px;
   cursor: pointer;
   z-index: 1;
+
   &:hover::after {
     opacity: 1;
   }
+
   &::after {
     opacity: 0;
     position: absolute;
@@ -160,10 +175,12 @@
     transition: all 0.5s ease;
     z-index: -1;
   }
+
   & img {
     border-radius: 15px 15px 0 0;
     height: 170px;
   }
+
   &__text {
     padding: 15px 15px;
   }
@@ -248,6 +265,7 @@
 
   #logo {
     padding: 40px 0;
+
     & img {
       width: 20vw;
     }
@@ -270,9 +288,11 @@
     display: flex;
     align-self: center;
     gap: 20px;
+
     & #howto {
       width: calc(30% - 15px);
     }
+
     & .restaurants {
       width: calc(70% - 15px);
     }
@@ -282,6 +302,7 @@
   .restaurants {
     background-color: whitesmoke;
     border-radius: 18px;
+
     & img {
       height: 170px;
     }
@@ -289,16 +310,19 @@
 
   .howto__nav {
     margin-bottom: 0;
+
     &__button {
       flex-direction: column;
       justify-content: space-around;
       height: 155px;
       padding: 30px;
     }
+
     & i {
       margin: 15px 0;
       font-size: xx-large;
     }
+
     & .number-circle {
       position: absolute;
       transform: none;
