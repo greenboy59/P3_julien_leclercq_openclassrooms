@@ -109,9 +109,8 @@
     right: 0;
     height: 100%;
     width: 4.4em;
-    transform: translateX(100%);
-    -webkit-box-shadow: inset -65px 0px 0px 0px $tertiary-color;
-    box-shadow: inset -65px 0px 0px 0px $tertiary-color;
+    -webkit-box-shadow: inset 0px 0px 0px 0px $tertiary-color;
+    box-shadow: inset 0px 0px 0px 0px $tertiary-color;
     transition: $main-transition-all-5s-ease-out;
   }
 
@@ -139,9 +138,8 @@
 
   &:hover::after,
   :focus::after {
-    transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    -webkit-transform: translateX(0%);
+    -webkit-box-shadow: inset -65px 0px 0px 0px $tertiary-color;
+    box-shadow: inset -65px 0px 0px 0px $tertiary-color;
   }
 
   &:hover::before,

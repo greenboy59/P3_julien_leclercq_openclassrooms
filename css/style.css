@@ -372,9 +372,8 @@ input {
   right: 0;
   height: 100%;
   width: 4.4em;
-  transform: translateX(100%);
-  -webkit-box-shadow: inset -65px 0px 0px 0px #99e2d0;
-  box-shadow: inset -65px 0px 0px 0px #99e2d0;
+  -webkit-box-shadow: inset 0px 0px 0px 0px #99e2d0;
+  box-shadow: inset 0px 0px 0px 0px #99e2d0;
   transition: all 0.5s ease-out;
 }
 .dishes-btn::before {
@@ -397,9 +396,8 @@ input {
 }
 .dishes-btn:hover::after,
 .dishes-btn :focus::after {
-  transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -webkit-transform: translateX(0%);
+  -webkit-box-shadow: inset -65px 0px 0px 0px #99e2d0;
+  box-shadow: inset -65px 0px 0px 0px #99e2d0;
 }
 .dishes-btn:hover::before,
 .dishes-btn :focus::before {
