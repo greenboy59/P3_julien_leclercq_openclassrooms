@@ -385,7 +385,7 @@ input {
   font-size: 25px;
   transform: translateX(100%) rotate(90deg);
   -moz-transform: translateX(100%) rotate(90deg);
-  -webkit-transform: translateX(100%) rotate(90deg);
+  -webkit-transform: translateX(100%) rotate(180deg);
   color: white;
   z-index: 2;
   transition: all 0.5s ease-out;
