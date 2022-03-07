@@ -4,29 +4,37 @@
   0% {
     transform: scale(0);
     -moz-transform: scale(0);
+    -webkit-transform: scale(0);
     transform-origin: bottom;
+    -webkit-transform-origin: bottom;
   }
   15% {
     transform: scale(0.3);
     -moz-transform: scale(0.3);
+    -webkit-transform: scale(0.3);
   }
   30% {
     transform: scale(0.6);
     -moz-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
   }
   50% {
     transform: scale(1);
     -moz-transform: scale(1);
+    -webkit-transform: scale(1);
   }
   70% {
     transform: scale(1.2);
     transition-delay: all 1s;
     -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
   }
   100% {
     transform: scale(1);
     -moz-transform: scale(1);
+    -webkit-transform: scale(1);
     transform-origin: bottom;
+    -webkit-transform-origin: bottom;
   }
 }
 /* --- Loading spinner --- */
@@ -314,6 +322,7 @@ input {
   position: absolute;
   font-family: "font-awesome 4 Free";
   font-size: 28px;
+  color: black;
   right: 20px;
   top: 190px;
   line-height: 1em;
