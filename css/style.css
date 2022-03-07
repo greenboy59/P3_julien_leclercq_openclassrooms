@@ -362,6 +362,7 @@ input {
   width: 100%;
   overflow: hidden;
   transition: all 0.5s ease-out;
+  outline: none;
   /* --- Pseudo élément pour le background vert --- */
   /* --- Pseudos éléments pour l'icone check --- */
 }
