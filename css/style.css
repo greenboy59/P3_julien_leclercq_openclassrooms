@@ -4,18 +4,29 @@
   0% {
     transform: scale(0);
     -moz-transform: scale(0);
+    transform-origin: bottom;
+  }
+  15% {
+    transform: scale(0.3);
+    -moz-transform: scale(0.3);
   }
   30% {
+    transform: scale(0.6);
+    -moz-transform: scale(0.6);
+  }
+  50% {
     transform: scale(1);
     -moz-transform: scale(1);
   }
-  60% {
+  70% {
     transform: scale(1.2);
+    transition-delay: all 1s;
     -moz-transform: scale(1.2);
   }
   100% {
     transform: scale(1);
     -moz-transform: scale(1);
+    transform-origin: bottom;
   }
 }
 /* --- Loading spinner --- */
@@ -28,7 +39,7 @@
     display: none;
   }
 }
-@-webkit-keyframes bounce {
+@-webkit-keyframes knife-cut {
   0%, 20%, 50%, 80%, 100% {
     -webkit-transform: translateY(0);
   }
@@ -39,7 +50,7 @@
     -webkit-transform: translateY(-15px);
   }
 }
-@-moz-keyframes bounce {
+@-moz-keyframes knife-cut {
   0%, 20%, 50%, 80%, 100% {
     -moz-transform: translateY(0);
   }
@@ -50,7 +61,7 @@
     -moz-transform: translateY(-15px);
   }
 }
-@-o-keyframes bounce {
+@-o-keyframes knife-cut {
   0%, 20%, 50%, 80%, 100% {
     -o-transform: translateY(0);
   }
@@ -61,7 +72,7 @@
     -o-transform: translateY(-15px);
   }
 }
-@keyframes bounce {
+@keyframes knife-cut {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0) rotate(-35deg);
   }
@@ -73,7 +84,7 @@
   }
 }
 /* --- Animation du loader - ligne d'ingrédients scrollant horizontalement à l'infinie --- */
-@keyframes food-fiesta {
+@keyframes food-line-translate {
   to {
     transform: translate(-100%, 0);
   }
@@ -176,7 +187,7 @@ a {
 
 h1,
 h2 {
-  font-family: "roboto-bold";
+  font-family: "roboto-bold", Sans-serif;
   padding: 20px 0;
 }
 
@@ -190,7 +201,7 @@ h2 {
 }
 
 h3 {
-  font-family: "roboto-bold";
+  font-family: "roboto-bold", Sans-serif;
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -198,27 +209,29 @@ h3 {
 }
 
 h4 {
-  font-family: "shrikhand";
+  font-family: "shrikhand", Sans-serif;
   font-size: 1.2em;
 }
 
 h5 {
-  font-family: "roboto-thin";
+  font-family: "roboto-thin", Sans-serif;
 }
 
-p, span {
-  font-family: "roboto-light";
+p,
+span {
+  font-family: "roboto-light", Sans-serif;
 }
 
-a {
-  font-family: "roboto-regular";
+a,
+button {
+  font-family: "roboto-regular", Sans-serif;
   font-size: 1em;
   cursor: pointer;
 }
 
 button,
 input {
-  font-family: "roboto-bold";
+  font-family: "roboto-bold", Sans-serif;
   border: none;
   background-color: transparent;
 }
@@ -297,39 +310,28 @@ input {
 }
 
 /* --- Création de l'icone du coeur animé --- */
-.fa-heart {
-  -moz-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+.btn-like {
   position: absolute;
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  top: 77%;
-  right: 20px;
   font-family: "font-awesome 4 Free";
   font-size: 28px;
-  z-index: 1;
+  right: 20px;
+  top: 190px;
+  line-height: 1em;
+  cursor: pointer;
 }
-.fa-heart:hover::after {
-  transform: scale(1);
-  transform-origin: bottom;
-  animation: pulse 0.6s 0.1s;
-  -moz-animation: pulse 0.6s 0.1s;
-  z-index: 1;
+.btn-like:focus::before {
+  animation: pulse ease-out 0.5s forwards;
+  -moz-animation: pulse ease-out 0.5s forwards;
+  visibility: visible;
 }
-.fa-heart::after {
-  -moz-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-  font-family: "font-awesome 4 Free";
+.btn-like::before {
   position: absolute;
-  left: 0;
   top: 0;
-  bottom: 0;
+  left: 0;
   right: 0;
-  z-index: -1;
+  bottom: 0;
+  visibility: hidden;
   content: "\f004";
-  transform: scale(0);
-  transform-origin: bottom;
   color: transparent;
   background-image: linear-gradient(360deg, #ff79da, #9356dc);
   background-clip: text;
@@ -355,10 +357,12 @@ input {
 .dishes-btn::after {
   content: "";
   position: absolute;
+  display: block;
   top: 0;
   right: 0;
   width: 4.4em;
   height: 100%;
+  visibility: hidden;
   background-color: #99e2d0;
   transform: translateX(100%);
   transition: all 0.5s ease-out;
@@ -380,6 +384,7 @@ input {
 }
 .dishes-btn:hover::after {
   transform: translateX(0%);
+  visibility: visible;
 }
 .dishes-btn:hover::before {
   transform: translate(-70%) rotate(1turn);
@@ -404,7 +409,7 @@ input {
 /* --- Régles spécifiques au desktop --- */
 @media only screen and (min-width: 900px) {
   .dishes-btn {
-    height: 100px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -478,10 +483,10 @@ footer a:hover {
   z-index: 5;
 }
 .container-loader strong {
-  font-family: "roboto-thin";
+  font-family: "roboto-thin", Sans-serif;
 }
 .container-loader > span {
-  font-family: "shrikhand";
+  font-family: "shrikhand", Sans-serif;
 }
 
 .container-loader__food-line, .container-loader__food-line-top-reverse {
@@ -489,12 +494,12 @@ footer a:hover {
   white-space: nowrap;
   position: absolute;
   height: 60px;
-  bottom: 25px;
+  bottom: 15px;
 }
 .container-loader__food-line::after, .container-loader__food-line-top-reverse::after {
   content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
   font-family: "font-awesome 4 Free";
-  animation: food-fiesta 20s linear infinite;
+  animation: food-line-translate 20s linear infinite;
   color: #99e2d0;
   font-size: 0.7em;
   letter-spacing: 4rem;
@@ -502,7 +507,7 @@ footer a:hover {
 .container-loader__food-line::before, .container-loader__food-line-top-reverse::before {
   content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
   font-family: "font-awesome 4 Free";
-  animation: food-fiesta 20s linear infinite;
+  animation: food-line-translate 20s linear infinite;
   color: #99e2d0;
   font-size: 0.7em;
   letter-spacing: 4rem;
@@ -519,23 +524,21 @@ footer a:hover {
 }
 
 .loader-subtitle {
-  font-family: "roboto-thin";
+  font-family: "roboto-thin", Sans-serif;
   font-size: 0.3em;
 }
 .loader-subtitle::after {
   content: "🔪";
   background: linear-gradient(360deg, #9356dc, #ff79da);
-  background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   display: block;
-  animation: 2s bounce ease infinite;
-  -moz-animation: 1s bounce ease infinite;
-  -webkit-animation: 1s bounce ease infinite;
-  font-weight: 900;
+  animation: 2s knife-cut ease infinite;
+  -moz-animation: 1s knife-cut ease infinite;
+  -webkit-animation: 1s knife-cut ease infinite;
   font-size: 4em;
   margin-top: 50px;
 }
@@ -591,7 +594,7 @@ footer a:hover {
   width: 25px;
 }
 .howto__nav :nth-child(3) {
-  font-family: "roboto-regular";
+  font-family: "roboto-regular", Sans-serif;
 }
 
 /* Création de la petite pastille avec les nombres */
@@ -655,7 +658,7 @@ footer a:hover {
   padding: 5px;
   background-color: #99e2d0;
   color: #269d80;
-  font-family: "roboto-regular";
+  font-family: "roboto-regular", Sans-serif;
   text-align: center;
   border-radius: 3px;
 }
@@ -792,17 +795,16 @@ footer h4 {
     font-size: 2em;
   }
 }
-/* --- Menu - à la Française --- */
 .title-menu-like-icon {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 .title-menu-like-icon .restaurant-title {
-  font-family: "shrikhand";
+  font-family: "shrikhand", Sans-serif;
   padding-top: 35px;
 }
-.title-menu-like-icon .fa-heart {
+.title-menu-like-icon .btn-like {
   margin-right: 15px;
   top: 35px;
 }
@@ -857,7 +859,7 @@ main {
   width: fit-content;
   position: relative;
   display: inline-block;
-  font-family: "roboto-thin";
+  font-family: "roboto-thin", Sans-serif;
 }
 .partial-underline::before {
   content: "";
@@ -881,9 +883,8 @@ main {
   justify-content: space-between;
 }
 .dishes-details-price strong {
-  font-family: "roboto-medium";
-  margin-right: 10px;
-  min-width: 20px;
+  font-family: "roboto-medium", Sans-serif;
+  padding: 10px;
 }
 .dishes-details-price .text-overflow-ellipsis {
   text-overflow: ellipsis;

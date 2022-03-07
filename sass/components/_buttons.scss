@@ -16,11 +16,7 @@
   }
   &::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    @include absolute-positioning-zero-axis;
     filter: brightness(105%);
     @include btn-hover-gradient;
     opacity: 0;
@@ -47,11 +43,7 @@
   }
   &::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    @include absolute-positioning-zero-axis;
     @include btn-hover;
     opacity: 0;
     z-index: -1;
@@ -61,36 +53,23 @@
 
 /* --- Création de l'icone du coeur animé --- */
 
-.fa-heart {
-  @include heart-icon-fill-transition;
+.btn-like {
   position: absolute;
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  top: 77%;
-  right: 20px;
   font-family: "font-awesome 4 Free";
   font-size: 28px;
-  z-index: 1;
-  &:hover::after {
-    transform: scale(1);
-    transform-origin: bottom;
-    animation: pulse 0.6s 0.1s;
-    -moz-animation: pulse 0.6s 0.1s;
-    z-index: 1;
+  right: 20px;
+  top: 190px;
+  line-height: 1em;
+  cursor: pointer;
+  &:focus::before {
+    animation: pulse ease-out 0.5s forwards;
+    -moz-animation: pulse ease-out 0.5s forwards;
+    visibility: visible;
   }
-  &::after {
-    @include heart-icon-fill-transition;
-    font-family: "font-awesome 4 Free";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+  &::before {
+    @include absolute-positioning-zero-axis;
+    visibility: hidden;
     content: "\f004";
-    transform: scale(0);
-    transform-origin: bottom;
     color: transparent;
     background-image: $secondary-gradient;
     background-clip: text;
@@ -116,10 +95,12 @@
   &::after {
     content: "";
     position: absolute;
+    display: block;
     top: 0;
     right: 0;
     width: 4.4em;
     height: 100%;
+    visibility: hidden;
     background-color: $tertiary-color;
     transform: translateX(100%);
     transition: $main-transition-all-5s-ease-out;
@@ -143,6 +124,7 @@
     padding-right: 4.4em;
     &::after {
       transform: translateX(0%);
+      visibility: visible;
     }
     &::before {
       transform: translate(-70%) rotate(1turn);
@@ -170,7 +152,7 @@
 
 @media only screen and (min-width: 900px) {
   .dishes-btn {
-    height: 100px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;

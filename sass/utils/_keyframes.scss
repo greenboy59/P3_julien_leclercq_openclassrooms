@@ -1,24 +1,38 @@
 /* --- Pulsations de l'icone coeur --- */
 
 @keyframes pulse {
+
   0% {
     transform: scale(0);
     -moz-transform: scale(0);
+    transform-origin: bottom;
+  }
+
+  15% {
+    transform: scale(0.3);
+    -moz-transform: scale(0.3);
   }
 
   30% {
+    transform: scale(0.6);
+    -moz-transform: scale(0.6);
+  }
+
+  50% {
     transform: scale(1);
     -moz-transform: scale(1);
   }
 
-  60% {
+  70% {
     transform: scale(1.2);
+    transition-delay: all 1s;
     -moz-transform: scale(1.2);
   }
 
   100% {
     transform: scale(1);
     -moz-transform: scale(1);
+    transform-origin: bottom;
   }
 }
 
@@ -35,7 +49,7 @@
   }
 }
 
-@-webkit-keyframes bounce {
+@-webkit-keyframes knife-cut {
   0%,
   20%,
   50%,
@@ -51,7 +65,7 @@
   }
 }
 
-@-moz-keyframes bounce {
+@-moz-keyframes knife-cut {
   0%,
   20%,
   50%,
@@ -67,7 +81,7 @@
   }
 }
 
-@-o-keyframes bounce {
+@-o-keyframes knife-cut {
   0%,
   20%,
   50%,
@@ -82,7 +96,7 @@
     -o-transform: translateY(-15px);
   }
 }
-@keyframes bounce {
+@keyframes knife-cut {
   0%,
   20%,
   50%,
@@ -100,7 +114,7 @@
 
 /* --- Animation du loader - ligne d'ingrédients scrollant horizontalement à l'infinie --- */
 
-@keyframes food-fiesta {
+@keyframes food-line-translate {
   to {
     transform: translate(-100%, 0);
   }

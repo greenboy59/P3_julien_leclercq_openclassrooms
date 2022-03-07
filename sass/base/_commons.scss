@@ -41,7 +41,7 @@ a {
 
 h1,
 h2 {
-  font-family: "roboto-bold";
+  font-family: "roboto-bold", Sans-serif;
   padding: 20px 0;
 }
 
@@ -55,7 +55,7 @@ h2 {
 }
 
 h3 {
-  font-family: "roboto-bold";
+  font-family: "roboto-bold", Sans-serif;
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -63,27 +63,29 @@ h3 {
 }
 
 h4 {
-  font-family: "shrikhand";
+  font-family: "shrikhand", Sans-serif;
   font-size: 1.2em;
 }
 
 h5 {
-  font-family: 'roboto-thin';
+  font-family: "roboto-thin", Sans-serif;
 }
 
-p, span {
-  font-family: "roboto-light";
+p,
+span {
+  font-family: "roboto-light", Sans-serif;
 }
 
-a {
-  font-family: "roboto-regular";
+a,
+button {
+  font-family: "roboto-regular", Sans-serif;
   font-size: 1em;
   cursor: pointer;
 }
 
 button,
 input {
-  font-family: "roboto-bold";
+  font-family: "roboto-bold", Sans-serif;
   border: none;
   background-color: transparent;
 }

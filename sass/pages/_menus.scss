@@ -1,14 +1,12 @@
-/* --- Menu - à la Française --- */
-
 .title-menu-like-icon {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   .restaurant-title {
-    font-family: "shrikhand";
+    font-family: "shrikhand", Sans-serif;
     padding-top: 35px;
   }
-  & .fa-heart {
+  & .btn-like {
     margin-right: 15px;
     top: 35px;
   }
@@ -64,7 +62,7 @@ main {
   width: fit-content;
   position: relative;
   display: inline-block;
-  font-family: "roboto-thin";
+  font-family: "roboto-thin", Sans-serif;
   &::before {
     content: "";
     border-bottom: 4px solid $tertiary-color;
@@ -87,9 +85,8 @@ main {
   display: flex;
   justify-content: space-between;
   & strong {
-    font-family: "roboto-medium";
-    margin-right: 10px;
-    min-width: 20px;
+    font-family: "roboto-medium", Sans-serif;
+    padding: 10px;
   }
   & .text-overflow-ellipsis {
     text-overflow: ellipsis;
