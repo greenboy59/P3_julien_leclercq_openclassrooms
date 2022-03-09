@@ -169,7 +169,7 @@ button,
 textarea,
 select {
   font-family: inherit;
-  outline: none;
+  outline: 0;
 }
 
 a {
@@ -311,6 +311,7 @@ input {
   top: 190px;
   line-height: 1em;
   cursor: pointer;
+  color: black;
 }
 .btn-like:hover::before,
 .btn-like :focus::before,
