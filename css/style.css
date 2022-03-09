@@ -169,6 +169,7 @@ button,
 textarea,
 select {
   font-family: inherit;
+  outline: none;
 }
 
 a {
