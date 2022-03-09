@@ -13,68 +13,54 @@
   font-size: 3em;
   z-index: 5;
 
-  & strong {
-    font-family: "roboto-thin", Sans-serif;
-  }
-
-  & > span {
+  & span {
     font-family: "shrikhand", Sans-serif;
   }
-}
 
-.container-loader__food-line {
-  display: flex;
-  white-space: nowrap;
-  position: absolute;
-  height: 60px;
-  bottom: 15px;
+  &__food-line {
+    display: flex;
+    white-space: nowrap;
+    position: absolute;
+    height: 60px;
+    bottom: 15px;
 
-  &::after,
-  &::before {
-    content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
-    font-family: "font-awesome 4 Free";
-    animation: food-line-translate 20s linear infinite;
-    color: $tertiary-color;
-    font-size: 0.7em;
-    letter-spacing: 4rem;
-  }
-}
-
-.container-loader__food-line-top-reverse {
-  @extend .container-loader__food-line;
-  top: 15px;
-
-  &::before {
-    animation-direction: reverse;
+    &::after,
+    &::before {
+      content: "\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6\f2e7\f805\f564\f787\f818\e448\f810\f7ef\f72f\f7b6";
+      font-family: "font-awesome 4 Free";
+      animation: food-line-translate 20s linear infinite;
+      color: $tertiary-color;
+      font-size: 0.7em;
+      letter-spacing: 4rem;
+    }
   }
 
-  &::after {
-    animation-direction: reverse;
-  }
-}
+  &__food-line--top--reverse {
+    @extend .container-loader__food-line;
+    top: 15px;
 
-.loader-subtitle {
-  font-family: "roboto-thin", Sans-serif;
-  font-size: 0.3em;
-
-  &::after {
-    content: "🔪";
-    background: $main-gradient;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
-    display: block;
-    animation: 2s knife-cut ease infinite;
-    -moz-animation: 1s knife-cut ease infinite;
-    -webkit-animation: 1s knife-cut ease infinite;
-    font-size: 4em;
-    margin-top: 50px;
+    &::before,
+    &::after {
+      animation-direction: reverse;
+    }
   }
 
-  & strong {
-    line-height: 3em;
+  .loader-subtitle {
+    & strong {
+      line-height: 3em;
+      font-family: "roboto-thin", Sans-serif;
+      font-size: 0.3em;
+    }
+
+    &::after {
+      content: "🔪";
+      background: $main-gradient;
+      @include background-text-clip;
+      display: block;
+      animation: 1s knife-cut ease infinite;
+      font-size: 1.2em;
+      margin-top: 50px;
+    }
   }
 }
 

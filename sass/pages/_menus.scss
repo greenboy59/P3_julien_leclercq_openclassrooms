@@ -49,18 +49,15 @@ main {
   }
 
   & .entries {
-    animation: dishes-appearance 1s ease-out;
-    animation-duration: 1s;
+    animation: 1s ease dishes-appearance;
   }
 
   & .dishes {
-    animation: dishes-appearance 1s ease-out;
-    animation-duration: 1.5s;
+    animation: 2s ease dishes-appearance;
   }
 
   & .desserts {
-    animation: dishes-appearance 1s ease-out;
-    animation-duration: 2s;
+    animation: 3s ease dishes-appearance;
   }
 }
 

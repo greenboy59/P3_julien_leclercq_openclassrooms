@@ -62,7 +62,6 @@
   position: absolute;
   font-family: "font-awesome 4 Free";
   font-size: 28px;
-  color: black;
   right: 20px;
   top: 190px;
   line-height: 1em;
@@ -78,13 +77,10 @@
 
   &::before {
     @include absolute-positioning-zero-axis;
+    @include background-text-clip;
     visibility: hidden;
     content: "\f004";
-    color: transparent;
     background-image: $secondary-gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
   }
 }
 
