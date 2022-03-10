@@ -67,6 +67,7 @@
   line-height: 1em;
   cursor: pointer;
   color: black;
+  outline: none;
 
   &:hover::before,
   :focus::before,

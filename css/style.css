@@ -312,6 +312,7 @@ input {
   line-height: 1em;
   cursor: pointer;
   color: black;
+  outline: none;
 }
 .btn-like:hover::before,
 .btn-like :focus::before,
