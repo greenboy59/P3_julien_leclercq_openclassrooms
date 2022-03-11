@@ -826,13 +826,13 @@ main {
   padding: 7px 0;
 }
 #wrapper-menu .entries {
-  animation: 1s ease dishes-appearance;
+  animation: 1s ease 400ms dishes-appearance;
 }
 #wrapper-menu .dishes {
-  animation: 2s ease dishes-appearance;
+  animation: 1s ease 800ms dishes-appearance;
 }
 #wrapper-menu .desserts {
-  animation: 3s ease dishes-appearance;
+  animation: 1s ease 1.2s dishes-appearance;
 }
 
 .partial-underline {
