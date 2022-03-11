@@ -48,16 +48,26 @@ main {
     padding: 7px 0;
   }
 
+  .entries,
+  .dishes,
+  .desserts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    opacity: 0;
+  }
+
   & .entries {
-    animation: 1s ease 400ms dishes-appearance;
+    animation: 1s ease 400ms dishes-appearance forwards;
   }
 
   & .dishes {
-    animation: 1s ease 800ms dishes-appearance;
+    animation: 1s ease 800ms dishes-appearance forwards;
   }
 
   & .desserts {
-    animation: 1s ease 1.2s dishes-appearance;
+    animation: 1s ease 1.2s dishes-appearance forwards;
   }
 }
 
@@ -74,15 +84,6 @@ main {
     width: 70%;
     bottom: 0;
   }
-}
-
-.entries,
-.dishes,
-.desserts {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 40px;
 }
 
 .dishes-details-price {

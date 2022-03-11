@@ -143,9 +143,9 @@
 
   &:hover::before,
   :focus::before {
-    transform: translate(-70%) rotate(1turn);
-    -moz-transform: translate(-70%) rotate(1turn);
-    -webkit-transform: translate(-70%) rotate(1turn);
+    transform: translateX(-70%) rotate(1turn);
+    -moz-transform: translateX(-70%) rotate(1turn);
+    -webkit-transform: translateX(-70%) rotate(1turn);
   }
 }
 

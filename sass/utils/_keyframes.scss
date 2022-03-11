@@ -119,7 +119,7 @@
   from {
     border-right: 60px solid $tertiary-color;
     transition: $main-transition-all-5s-ease-out;
-    transform: translateX(-1000%);
+    transform: translateX(-100%);
   }
   to {
     transform: translateX(0%);
@@ -127,11 +127,11 @@
 }
 
 @keyframes dishes-appearance {
-  0% {
-    transform: translateY(50%);
+  from {
+    transform: translateY(30%);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateY(0%);
     opacity: 1;
   }
